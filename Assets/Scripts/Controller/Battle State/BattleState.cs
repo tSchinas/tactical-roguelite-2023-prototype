@@ -1,0 +1,80 @@
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+public abstract class BattleState : State
+{
+    protected BattleController owner;
+    //holding reference to items in scene which states need to perform logic.
+    //wrapping fields in properties to avoid adding duplicate pointers.
+    //if battlecontroller reference changes or updates, states all still point to correct entity
+    public CameraRig CameraRig { get { return owner.CameraRig; } }
+    public Board board { get { return owner.Board; } }
+    public LevelData LevelData { get { return owner.LevelData; } }
+    public Transform TileSelectionIndicator { get { return owner.TileSelectionIndicator; } }
+    public Point pos { get { return owner.pos; } set { owner.pos = value; } }
+    public AbilityMenuPanelController abilityMenuPanelController { get { return owner.abilityMenuPanelController; } }
+    public Turn turn { get { return owner.turn; } }
+    public List<Unit> units { get { return owner.units; } }
+    public StatPanelController statPanelController { get { return owner.statPanelController; } } 
+
+    protected virtual void Awake()
+    {
+        owner = GetComponent<BattleController>();//gets owner reference used above
+    }
+
+    protected override void AddListeners()
+    {
+        InputController.moveEvent += OnMove;
+        InputController.fireEvent += OnFire;
+    }
+
+    protected override void RemoveListeners()
+    {
+        InputController.moveEvent -= OnMove;
+        InputController.fireEvent -= OnFire;
+    }
+
+    //virtual so concrete subclasses are not required to override unless modifying functionality
+    protected virtual void OnMove(object sender, InfoEventArgs<Point> e)
+    {
+
+    }
+
+    protected virtual void OnFire(object sender, InfoEventArgs<int> e)
+    {
+
+    }
+
+    //sets selected tile of game board, assuming tile at location.
+    //added in base class because several states will make use of selected tile.
+    protected virtual void SelectTile(Point p)
+    {
+        if (pos == p || !board.tiles.ContainsKey(p))
+            return;
+        pos = p;
+        TileSelectionIndicator.localPosition = board.tiles[p].Center;
+    }
+    protected virtual Unit GetUnit (Point p)
+    {
+        Tile t = board.GetTile(p);
+        GameObject content = t != null ? t.content : null;
+        return content != null ? content.GetComponent<Unit>() : null;
+    }
+    protected virtual void RefreshPrimaryStatPanel(Point p)
+    {
+        Unit target = GetUnit(p);
+        if (target != null)
+            statPanelController.ShowPrimary(target.gameObject);
+        else
+            statPanelController.HidePrimary();
+    }
+    protected virtual void RefreshSecondaryStatPanel(Point p)
+    {
+        Unit target = GetUnit(p);
+        if (target != null)
+            statPanelController.ShowSecondary(target.gameObject);
+        else
+            statPanelController.HideSecondary();
+    }
+}
+ 
