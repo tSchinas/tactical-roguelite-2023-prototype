@@ -13,7 +13,17 @@ MonoBehaviour:
   m_Name: Hero
   m_EditorClassIdentifier: 
   model: Hero
+  weapon: 
+  subweapon: 
   attack: Attack
   abilityCatalog: Dagger
   locomotions: 0
   alliance: 2
+  hp: 10
+  mhp: 10
+  ap: 5
+  map: 5
+  atk: 5
+  def: 1
+  mov: 3
+  jmp: 3

@@ -36,9 +36,9 @@ public static class UnitParser
     {
         string[] elements = line.Split(',');
         GameObject obj = GetOrCreate(elements[0]);
-        Job job = obj.GetComponent<Job>();
-        for (int i = 1; i<Job.statOrder.Length+1;++i)
-            job.baseStats[i - 1] = Convert.ToInt32(elements[i]);
+        //Job job = obj.GetComponent<Job>();
+        //for (int i = 1; i<Job.statOrder.Length+1;++i)
+        //    job.baseStats[i - 1] = Convert.ToInt32(elements[i]);
 
         Debug.Log("Applying stats");
 
@@ -93,7 +93,7 @@ public static class UnitParser
     {
         GameObject instance = new GameObject("TEMP");
         Debug.Log("TEMP created in UnitParser.Create()");
-        instance.AddComponent<Job>();
+       // instance.AddComponent<Job>();
         GameObject prefab = PrefabUtility.CreatePrefab(fullPath, instance);
         GameObject.DestroyImmediate(instance);
         return prefab;

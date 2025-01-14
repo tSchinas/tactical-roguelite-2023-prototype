@@ -29,7 +29,7 @@ public class InitBattleState : BattleState
     {
         string[] recipes = new string[]
         {
-            "Hero"
+            "Hero", "Light Bandit"
         };
         List<Tile> locations = new List<Tile>(board.tiles.Values);
         for (int i = 0; i < recipes.Length; ++i)

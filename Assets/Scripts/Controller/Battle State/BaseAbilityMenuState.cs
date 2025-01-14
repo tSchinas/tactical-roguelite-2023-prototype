@@ -10,6 +10,7 @@ public abstract class BaseAbilityMenuState : BattleState //abstract base class s
     public override void Enter()
     {
         base.Enter();
+        //Debug.Log($"Entering state: {this.GetType().Name}");
         SelectTile(turn.actor.tile.pos);
         LoadMenu();
     }
@@ -22,6 +23,7 @@ public abstract class BaseAbilityMenuState : BattleState //abstract base class s
 
     protected override void OnFire(object sender, InfoEventArgs<int> e)
     {
+        Debug.Log(e.info);
         if (e.info == 0)
             Confirm();
         else

@@ -18,7 +18,7 @@ public class PerformAbilityState : BattleState
         //todo play animation, etc
         yield return null;
         //todo apply ability effect, etc
-        TemporaryAttackExample();
+        ApplyAbility();
 
         if (turn.hasUnitMoved)
             owner.ChangeState<EndFacingState>();
@@ -26,19 +26,22 @@ public class PerformAbilityState : BattleState
             owner.ChangeState<CommandSelectionState>();
     }
 
-    void TemporaryAttackExample()
+    void ApplyAbility()
     {
-        for (int i = 0; i<turn.targets.Count;++i)
+        BaseAbilityEffect[] effects = turn.ability.GetComponentsInChildren<BaseAbilityEffect>();
+        for (int i = 0; i < turn.targets.Count; ++i)
         {
-            GameObject obj = turn.targets[i].content;
-            Stats userStats = turn.actor.GetComponent<Stats>();
-            Stats targetStats = obj != null ? obj.GetComponentInChildren<Stats>() : null;
-            if (targetStats!=null)
+            Tile target = turn.targets[i];
+            for (int j = 0; j < effects.Length; ++j)
             {
-                targetStats[StatTypes.HP] -= (userStats[StatTypes.ATK]-targetStats[StatTypes.DEF]);
-                if (targetStats[StatTypes.HP] <= 0)
-                    Debug.Log("Unit KO'd'!", obj);
+                BaseAbilityEffect effect = effects[j];
+                AbilityEffectTarget targeter = effect.GetComponent<AbilityEffectTarget>();
+                if (targeter.IsTarget(target))
+                {
+                    
+                    effect.Apply(target);
+                }
             }
         }
-    }    
+    }
 }

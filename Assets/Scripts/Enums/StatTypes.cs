@@ -12,6 +12,6 @@ public enum StatTypes
     DEF,
     MOV,
     JMP,
-    LVL,
+    
     Count
 }

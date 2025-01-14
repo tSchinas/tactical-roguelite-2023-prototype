@@ -19,6 +19,7 @@ public class ConversationPanel : MonoBehaviour
     {
         speaker.sprite = sd.speaker;
         speaker.SetNativeSize();
+        
         for (int i = 0; i < sd.messages.Count; ++i)
         {
             message.text = sd.messages[i];

@@ -25,11 +25,14 @@ public class CommandSelectionState : BaseAbilityMenuState
     }
     public override void Exit()
     {
+
         base.Exit();
         statPanelController.HidePrimary();
+        
     }
     protected override void Confirm()
     {
+        Debug.Log("CommandSelectionState.Confirm() fired. abilityMenuPanelController.selection = " + abilityMenuPanelController.selection);
         switch (abilityMenuPanelController.selection)
         {
             case 0: //move
@@ -46,6 +49,7 @@ public class CommandSelectionState : BaseAbilityMenuState
 
     protected override void Cancel()
     {
+        Debug.Log("CommandSelectionState.Cancel() fired. abilityMenuPanelController.selection = " + abilityMenuPanelController.selection);
         if (turn.hasUnitMoved&&turn.lockMove)
         {
             turn.UndoMove();

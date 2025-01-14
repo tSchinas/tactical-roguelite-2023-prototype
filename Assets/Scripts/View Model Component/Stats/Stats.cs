@@ -4,26 +4,7 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
-    public int hp;
-    public int mhp;
-    public int ap;
-    public int map;
-    public int atk;
-    public int def;
-    public int mag;
-    public int mdf;
-    public int mov;
-    public int jmp;
-
-
-
-
-    //private void Start()
-    //{
-    //    HP = MHP;
-    //    AP = 0;
-    //}
-
+    
     public int this[StatTypes s]
     {
         get { return _data[(int)s]; }

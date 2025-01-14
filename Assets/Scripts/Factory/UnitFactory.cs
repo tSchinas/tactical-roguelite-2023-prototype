@@ -20,7 +20,7 @@ public class UnitFactory
         GameObject obj = InstantiatePrefab("Units/" + recipe.model);
         obj.name = recipe.name;
         obj.AddComponent<Unit>();
-        AddStats(obj);
+        AddStats(obj, recipe);
         AddLocomotion(obj, recipe.locomotions);
         //obj.AddComponent<Status>();
         //obj.AddComponent<Equipment>();
@@ -45,10 +45,19 @@ public class UnitFactory
         GameObject instance = GameObject.Instantiate(prefab);
         return instance;
     }
-    static void AddStats(GameObject obj)
+    static void AddStats(GameObject obj, UnitRecipe recipe)
     {
         Stats s = obj.AddComponent<Stats>();
-        //s.SetValue(StatTypes.LVL, 1, false);
+        
+        s.SetValue(StatTypes.HP, recipe.hp, false);
+        s.SetValue(StatTypes.MHP, recipe.mhp, false);
+        s.SetValue(StatTypes.AP, recipe.ap, false);
+        s.SetValue(StatTypes.MAP, recipe.map, false);
+        s.SetValue(StatTypes.ATK, recipe.atk, false);
+        s.SetValue(StatTypes.DEF, recipe.def, false);
+        s.SetValue(StatTypes.MOV, recipe.mov, false);
+        s.SetValue(StatTypes.JMP, recipe.jmp, false);
+       
     }
     //static void AddJob (GameObject obj, string name)
     //{
@@ -81,6 +90,11 @@ public class UnitFactory
     static void AddAttack (GameObject obj, string name)
     {
         GameObject instance = InstantiatePrefab("Abilities/" + name);
+        if (instance == null)
+        {
+            Debug.LogError("No Prefab for name: " + name);
+            
+        }
         instance.transform.SetParent(obj.transform);
     }
     static void AddAbilityCatalog (GameObject obj, string name)

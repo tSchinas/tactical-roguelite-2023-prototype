@@ -21,7 +21,7 @@ public class SelectUnitState : BattleState
         RefreshPrimaryStatPanel(pos);
         yield return null;
         owner.ChangeState<CommandSelectionState>();
-        Debug.Log("Changed to Command Selection State.");
+       
         
     }
 

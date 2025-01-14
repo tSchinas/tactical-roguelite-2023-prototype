@@ -18,8 +18,6 @@ public class UnitRecipe : ScriptableObject
     public int map;
     public int atk;
     public int def;
-    public int mag;
-    public int mdf;
     public int mov;
     public int jmp;
 }

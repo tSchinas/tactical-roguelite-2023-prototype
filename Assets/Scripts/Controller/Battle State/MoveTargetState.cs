@@ -9,6 +9,7 @@ public class MoveTargetState : BattleState
     public override void Enter()
     {
         base.Enter();
+        //Debug.Log($"Unit movement range is: {turn.actor.GetComponent<HeroFinalStats>().mov}");
         Movement mover = turn.actor.GetComponent<Movement>();
         tiles = mover.GetTilesInRange(board);
         board.SelectTiles(tiles);

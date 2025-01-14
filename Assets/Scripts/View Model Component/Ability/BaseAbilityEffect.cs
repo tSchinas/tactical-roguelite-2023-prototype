@@ -12,7 +12,11 @@ public abstract class BaseAbilityEffect : MonoBehaviour
 	public const string TweakDamageNotification = "DamageAbilityEffect.TweakDamageNotification";
 	public const string MissedNotification = "BaseAbilityEffect.MissedNotification";
 	public const string HitNotification = "BaseAbilityEffect.HitNotification";
-	public abstract int Predict(Tile target);
+
+    protected abstract int GetBaseAttack();
+    protected abstract int GetBaseDefense(Unit target);
+    protected abstract int GetPower();
+    public abstract int Predict(Tile target);
     public void Apply(Tile target)
     {
 		if (GetComponent<AbilityEffectTarget>().IsTarget(target) == true)

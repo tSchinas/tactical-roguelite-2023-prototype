@@ -6,7 +6,8 @@ public abstract class State : MonoBehaviour //abstract in order to emphasize cre
 	public virtual void Enter ()
 	{
 		AddListeners();
-	}
+        Debug.Log($"Entering state: {this.GetType().Name}");
+    }
 
 	public virtual void Exit ()
 	{
