@@ -10,7 +10,7 @@ public class Stats : MonoBehaviour
         get { return _data[(int)s]; }
         set { SetValue(s, value, true); }
     }
-    int[] _data = new int[(int)StatTypes.Count];
+    public int[] _data = new int[(int)StatTypes.Count];
     public void SetValue(StatTypes type, int value, bool allowExceptions)
     {
         int oldValue = this[type];

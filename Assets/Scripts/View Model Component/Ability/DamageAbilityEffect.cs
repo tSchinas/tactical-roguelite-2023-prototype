@@ -63,14 +63,18 @@ public class DamageAbilityEffect : BaseAbilityEffect
 
         //int abilityPower = 
 
-        int attack = GetStat(attacker, defender, GetAttackNotification, 0);
-        int power = GetStat(attacker, defender, GetPowerNotification, 0);
-        int defense = GetStat(attacker, defender, GetDefenseNotification, 0);
+        //int attack = GetStat(attacker, defender, GetAttackNotification, 0);
+        //int power = GetStat(attacker, defender, GetPowerNotification, 0);
+        //int defense = GetStat(attacker, defender, GetDefenseNotification, 0);
         
-        int damage = (attack+power+1) - defense;
+        int attack = attacker.GetComponent<Stats>()[StatTypes.ATK];
+        int power = 0;
+        int defense = defender.GetComponent<Stats>()[StatTypes.DEF];
+
+        int damage = (attack+power) - defense;
         damage = Mathf.Max(damage, 0);
 
-        damage = GetStat(attacker, defender, TweakDamageNotification, damage);
+        //damage = GetStat(attacker, defender, TweakDamageNotification, damage);
         damage = Mathf.Clamp(damage, minDamage, maxDamage);
         return damage;
     }
@@ -120,12 +124,14 @@ public class DamageAbilityEffect : BaseAbilityEffect
 
     protected override int GetBaseAttack()
     {
-        return GetComponentInParent<Stats>()[StatTypes.ATK];
+        int atk = GetComponentInParent<Stats>()[StatTypes.ATK];
+        return atk;
     }
 
     protected override int GetBaseDefense(Unit target)
     {
-        return GetComponentInParent<Stats>()[StatTypes.DEF];
+        int def = GetComponentInParent<Stats>()[StatTypes.DEF];
+        return def;
     }
 
     protected override int GetPower()
