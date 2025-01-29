@@ -16,14 +16,14 @@ MonoBehaviour:
   weapon: 
   subweapon: 
   attack: RangedAtk
-  abilityCatalog: 
+  abilityCatalog: Dagger
   locomotions: 0
   alliance: 4
-  hp: 5
-  mhp: 5
+  hp: 2
+  mhp: 2
   ap: 3
-  map: 5
-  atk: 2
+  map: 3
+  atk: 1
   def: 0
   mov: 3
   jmp: 2

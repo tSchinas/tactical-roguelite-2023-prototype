@@ -5,7 +5,8 @@ using System;
 
 public class DamageAbilityEffect : BaseAbilityEffect
 {
-    
+    public int abilityPower = 0;
+    public int hits = 1;
 
     private void OnEnable()
     {
@@ -68,10 +69,10 @@ public class DamageAbilityEffect : BaseAbilityEffect
         //int defense = GetStat(attacker, defender, GetDefenseNotification, 0);
         
         int attack = attacker.GetComponent<Stats>()[StatTypes.ATK];
-        int power = 0;
+        //int power = 0;
         int defense = defender.GetComponent<Stats>()[StatTypes.DEF];
 
-        int damage = (attack+power) - defense;
+        int damage = (attack+abilityPower) - defense;
         damage = Mathf.Max(damage, 0);
 
         //damage = GetStat(attacker, defender, TweakDamageNotification, damage);
@@ -81,21 +82,22 @@ public class DamageAbilityEffect : BaseAbilityEffect
 
     protected override int OnApply(Tile target)
     {
-        Unit defender = target.content.GetComponent<Unit>();
+        
+            Unit defender = target.content.GetComponent<Unit>();
 
-        // Start with the predicted damage value
-        int value = Predict(target);
+            // Start with the predicted damage value
+            int value = Predict(target);
 
-        // Add some random variance
-        //value = Mathf.FloorToInt(value * UnityEngine.Random.Range(0.9f, 1.1f));
+            // Clamp the damage to a range
+            value = Mathf.Clamp(value, minDamage, maxDamage);
 
-        // Clamp the damage to a range
-        value = Mathf.Clamp(value, minDamage, maxDamage);
+            // Apply the damage to the target
+            Stats s = defender.GetComponent<Stats>();
+        for (int i = 0; i < hits; i++)
+            s[StatTypes.HP] -= value;
 
-        // Apply the damage to the target
-        Stats s = defender.GetComponent<Stats>();
-        s[StatTypes.HP] -= value;
-        return value;
+            return value;
+        
     }
 
     //public override void Apply(Tile target)

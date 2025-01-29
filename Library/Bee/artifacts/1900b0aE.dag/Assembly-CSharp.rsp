@@ -385,6 +385,7 @@
 "Assets/Scripts/Enums/EquipSlots.cs"
 "Assets/Scripts/Enums/Locomotions.cs"
 "Assets/Scripts/Enums/StatTypes.cs"
+"Assets/Scripts/Enums/Targets.cs"
 "Assets/Scripts/EventArgs/InfoEventArgs.cs"
 "Assets/Scripts/Exceptions/BaseException.cs"
 "Assets/Scripts/Exceptions/Modifiers/AddValueModifier.cs"

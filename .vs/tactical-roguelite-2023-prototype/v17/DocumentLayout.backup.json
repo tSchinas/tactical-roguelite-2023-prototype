@@ -3,56 +3,72 @@
   "WorkspaceRootPath": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\controller\\battle state\\performabilitystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\controller\\battle state\\performabilitystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|c:\\users\\thomas.schinas\\documents\\github\\tactical-roguelite-2023-prototype\\assets\\scripts\\view model component\\actor\\alliance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\view model component\\actor\\alliance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|c:\\users\\thomas.schinas\\documents\\github\\tactical-roguelite-2023-prototype\\assets\\scripts\\view model component\\ability\\damageabilityeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\view model component\\ability\\damageabilityeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|c:\\users\\thomas.schinas\\documents\\github\\tactical-roguelite-2023-prototype\\assets\\scripts\\enums\\targets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enums\\targets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\view model component\\stats\\stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\view model component\\stats\\stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\enums\\alliances.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enums\\alliances.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\view model component\\ability\\baseabilityeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\view model component\\ability\\baseabilityeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\controller\\abilitymenupanelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\abilitymenupanelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\factory\\unitfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\factory\\unitfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\view model component\\ability\\baseabilityeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\view model component\\ability\\baseabilityeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\enums\\stattypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\enums\\stattypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\controller\\battle state\\performabilitystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\battle state\\performabilitystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\controller\\battle state\\abilitytargetstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\controller\\battle state\\abilitytargetstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\factory\\unitfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\factory\\unitfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\controller\\battle state\\initbattlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\controller\\battle state\\initbattlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\enums\\stattypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enums\\stattypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\view model component\\stats\\stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\view model component\\stats\\stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\controller\\battle state\\confirmabilitytargetstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\controller\\battle state\\confirmabilitytargetstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\controller\\battle state\\abilitytargetstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\battle state\\abilitytargetstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\model\\turn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\model\\turn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\view model component\\ability\\damageabilityeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\view model component\\ability\\damageabilityeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\controller\\battlecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\controller\\battlecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\model\\turn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\model\\turn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\model\\unitrecipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DF11B55A-B7F1-A4EA-4D42-CDB8B6AD86D2}|Assembly-CSharp.Player.csproj|solutionrelative:assets\\scripts\\model\\unitrecipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\controller\\battle state\\confirmabilitytargetstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\battle state\\confirmabilitytargetstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\controller\\battle state\\initbattlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\battle state\\initbattlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|solutionrelative:assets\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\model\\unitrecipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\model\\unitrecipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\assets\\scripts\\controller\\battlecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98E7DCE7-2C5C-99C9-BF39-589351E21B42}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\controller\\battlecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,32 +82,81 @@
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Targets.cs",
+              "DocumentMoniker": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\Enums\\Targets.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enums\\Targets.cs",
+              "ToolTip": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\Enums\\Targets.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enums\\Targets.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T10:57:10.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Alliance.cs",
+              "DocumentMoniker": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\View Model Component\\Actor\\Alliance.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\View Model Component\\Actor\\Alliance.cs",
+              "ToolTip": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\View Model Component\\Actor\\Alliance.cs",
+              "RelativeToolTip": "Assets\\Scripts\\View Model Component\\Actor\\Alliance.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T10:38:50.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Alliances.cs",
+              "DocumentMoniker": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\Enums\\Alliances.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Enums\\Alliances.cs",
+              "ToolTip": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\Enums\\Alliances.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Enums\\Alliances.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-29T10:38:33.492Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "AbilityMenuPanelController.cs",
+              "DocumentMoniker": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\Controller\\AbilityMenuPanelController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\AbilityMenuPanelController.cs",
+              "ToolTip": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\Controller\\AbilityMenuPanelController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Controller\\AbilityMenuPanelController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAA4wDwAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T15:45:46.76Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "BaseAbilityEffect.cs",
               "DocumentMoniker": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\View Model Component\\Ability\\BaseAbilityEffect.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\View Model Component\\Ability\\BaseAbilityEffect.cs",
               "ToolTip": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\View Model Component\\Ability\\BaseAbilityEffect.cs",
               "RelativeToolTip": "Assets\\Scripts\\View Model Component\\Ability\\BaseAbilityEffect.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAIwBEAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-11T20:44:35.219Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "PerformAbilityState.cs",
               "DocumentMoniker": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\Controller\\Battle State\\PerformAbilityState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\Battle State\\PerformAbilityState.cs",
               "ToolTip": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\Controller\\Battle State\\PerformAbilityState.cs",
               "RelativeToolTip": "Assets\\Scripts\\Controller\\Battle State\\PerformAbilityState.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAuwBwAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T17:26:58.995Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-11T17:26:58.995Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "UnitFactory.cs",
               "DocumentMoniker": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\Factory\\UnitFactory.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Factory\\UnitFactory.cs",
@@ -103,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "StatTypes.cs",
               "DocumentMoniker": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\Enums\\StatTypes.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enums\\StatTypes.cs",
@@ -115,19 +180,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Stats.cs",
               "DocumentMoniker": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\View Model Component\\Stats\\Stats.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\View Model Component\\Stats\\Stats.cs",
               "ToolTip": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\View Model Component\\Stats\\Stats.cs",
               "RelativeToolTip": "Assets\\Scripts\\View Model Component\\Stats\\Stats.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-11T13:54:46.966Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "AbilityTargetState.cs",
               "DocumentMoniker": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\Controller\\Battle State\\AbilityTargetState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\Battle State\\AbilityTargetState.cs",
@@ -139,20 +204,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "DamageAbilityEffect.cs",
               "DocumentMoniker": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\View Model Component\\Ability\\DamageAbilityEffect.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\View Model Component\\Ability\\DamageAbilityEffect.cs",
               "ToolTip": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\View Model Component\\Ability\\DamageAbilityEffect.cs",
               "RelativeToolTip": "Assets\\Scripts\\View Model Component\\Ability\\DamageAbilityEffect.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAQwF8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-11T16:51:42.685Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-11T16:51:42.685Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Turn.cs",
               "DocumentMoniker": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\Model\\Turn.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Model\\Turn.cs",
@@ -164,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "ConfirmAbilityTargetState.cs",
               "DocumentMoniker": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\Controller\\Battle State\\ConfirmAbilityTargetState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\Battle State\\ConfirmAbilityTargetState.cs",
@@ -176,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "InitBattleState.cs",
               "DocumentMoniker": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\Controller\\Battle State\\InitBattleState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\Battle State\\InitBattleState.cs",
@@ -188,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "Unit.cs",
               "DocumentMoniker": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Unit.cs",
               "RelativeDocumentMoniker": "Assets\\Unit.cs",
@@ -200,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "UnitRecipe.cs",
               "DocumentMoniker": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\Model\\UnitRecipe.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Model\\UnitRecipe.cs",
@@ -212,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "BattleController.cs",
               "DocumentMoniker": "C:\\Users\\thomas.schinas\\Documents\\GitHub\\tactical-roguelite-2023-prototype\\Assets\\Scripts\\Controller\\BattleController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Controller\\BattleController.cs",

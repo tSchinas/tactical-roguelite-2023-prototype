@@ -6,6 +6,7 @@ public abstract class BaseAbilityEffect : MonoBehaviour
 {
 	protected const int minDamage = 0;
 	protected const int maxDamage = 999;
+	
 	public const string GetAttackNotification = "DamageAbilityEffect.GetAttackNotification";
 	public const string GetDefenseNotification = "DamageAbilityEffect.GetDefenseNotification";
 	public const string GetPowerNotification = "DamageAbilityEffect.GetPowerNotification";
@@ -19,13 +20,15 @@ public abstract class BaseAbilityEffect : MonoBehaviour
     public abstract int Predict(Tile target);
     public void Apply(Tile target)
     {
-		if (GetComponent<AbilityEffectTarget>().IsTarget(target) == true)
-			this.PostNotification(HitNotification, OnApply(target));
-		else 
-			this.PostNotification(MissedNotification);
+
+        if (GetComponent<AbilityEffectTarget>().IsTarget(target) == true)
+            this.PostNotification(HitNotification, OnApply(target));
+        else
+            this.PostNotification(MissedNotification);
+
     }
 
-	protected abstract int OnApply(Tile target);
+    protected abstract int OnApply(Tile target);
 
 	protected virtual int GetStat(Unit attacker, Unit target, string notification, int startValue)
 	{

@@ -21,7 +21,7 @@ public class BoardGenerator : MonoBehaviour
     [SerializeField] private Point pos;
     [SerializeField] private LevelData levelData; //facilitates loading of previously saved boards to edit later
     private Transform _marker;
-
+    [SerializeField] private string levelName;
     private readonly Dictionary<Point, Tile>
         tiles = new(); //determine whether board contains tile based on specified coordinate position and grab reference
 
@@ -156,7 +156,7 @@ public class BoardGenerator : MonoBehaviour
         foreach (var t in tiles.Values)
             board.tiles.Add(new Vector3(t.pos.x, t.height, t.pos.y));
 
-        var fileName = string.Format("Assets/Resources/Levels/{1}.asset", filePath, name);
+        string fileName = string.Format("Assets/Resources/Levels/{0}.asset", levelName);
         AssetDatabase.CreateAsset(board, fileName);
 #endif
     }
