@@ -31,6 +31,7 @@ public class UnitFactory
         AddAttack(obj, recipe.attack);
         AddAbilityCatalog(obj, recipe.abilityCatalog);
         AddAlliance(obj, recipe.alliance);
+        AddAttackPattern(obj, recipe.strategy);
         return obj;
     }
 
@@ -85,7 +86,7 @@ public class UnitFactory
     static void AddAlliance (GameObject obj, Alliances type)
     {
         Alliance alliance = obj.AddComponent<Alliance>();
-        alliance.type = type;
+        alliance.allianceType = type;
     }
     static void AddAttack (GameObject obj, string name)
     {
@@ -114,13 +115,28 @@ public class UnitFactory
             GameObject category = new GameObject(recipe.categories[i].name);
             category.transform.SetParent(main.transform);
 
-            for (int j = 0; j < recipe.categories[i].entries.Length; ++j)
+            for (int j = 0; j < recipe.categories[i].abilities.Length; ++j)
             {
-                string abilityName = string.Format("Abilities/{0}/{1}", recipe.categories[i].name, recipe.categories[i].entries[j]);
+                string abilityName = string.Format("Abilities/{0}/{1}", recipe.categories[i].name, recipe.categories[i].abilities[j]);
                 GameObject ability = InstantiatePrefab(abilityName);
-                ability.name = recipe.categories[i].entries[j];
+                ability.name = recipe.categories[i].abilities[j];
                 ability.transform.SetParent(category.transform);
             }
+        }
+    }
+
+    static void AddAttackPattern(GameObject obj, string name)
+    {
+        Driver driver = obj.AddComponent<Driver>();
+        if (string.IsNullOrEmpty(name))
+        {
+            driver.normal = Drivers.Human;
+        }
+        else
+        {
+            driver.normal = Drivers.Computer;
+            GameObject instance = InstantiatePrefab("Attack Pattern/" + name);
+            instance.transform.SetParent(obj.transform);
         }
     }
 }

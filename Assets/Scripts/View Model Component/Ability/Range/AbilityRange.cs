@@ -9,4 +9,6 @@ public abstract class AbilityRange : MonoBehaviour
     public virtual bool DirectionOriented { get { return false; } }//should be true when range is a pattern i.e cone/line. when true, use movement input buttons to change facing. when false, move cursor to select tile in range
     protected Unit unit { get { return GetComponentInParent<Unit>(); } }//crawls through hierarchy to find Unit component
     public abstract List<Tile> GetTilesInRange(Board board);//returns list of tiles that can be reached by selected ability to highlight on board
+
+    public virtual bool positionOriented { get { return true; } }
 }

@@ -47,6 +47,7 @@ public class CutsceneState : BattleState
 
     void OnCompleteConversation(object sender, System.EventArgs e)
     {
+        //owner.StartBattle();
         owner.ChangeState<SelectUnitState>();
         Debug.Log("Changed to Select Unit State.");
     }

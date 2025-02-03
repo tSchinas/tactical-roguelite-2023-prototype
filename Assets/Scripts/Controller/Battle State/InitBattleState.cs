@@ -18,7 +18,9 @@ public class InitBattleState : BattleState
         SelectTile(p);
         
         SpawnTestUnits(); //new placeholder function
+        InitializeUnitLists();
         yield return null;
+        owner.facingIndicator.gameObject.SetActive(false);
         owner.ChangeState<CutsceneState>(); 
         Debug.Log("Changed to Cutscene State.");
         //owner.ChangeState<SelectUnitState>();
@@ -49,5 +51,22 @@ public class InitBattleState : BattleState
     
     
     }
-
+    private void InitializeUnitLists()
+    {
+        owner.playerUnits.Clear();
+        owner.enemyUnits.Clear();
+        foreach (var unit in units)
+        {
+            Alliances alliance;
+            alliance = unit.GetComponentInParent<Alliance>().allianceType;
+            if (alliance == Alliances.Hero)
+            {
+                owner.playerUnits.Add(unit);
+            }
+            else if (alliance == Alliances.Enemy)
+            {
+                owner.enemyUnits.Add(unit);
+            }
+        }
+    }
 }

@@ -53,7 +53,7 @@ public class CategorySelectionState : BaseAbilityMenuState
         //if (turn.hasUnitMoved)
         //    turn.lockMove = true;
         //owner.ChangeState<CommandSelectionState>();
-        turn.ability = turn.actor.GetComponentInChildren<AbilityRange>().gameObject;
+        turn.ability = turn.actor.GetComponentInChildren<Ability>();
         owner.ChangeState<AbilityTargetState>();
     }
 

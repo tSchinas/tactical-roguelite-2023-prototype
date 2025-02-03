@@ -5,11 +5,12 @@ using UnityEngine;
 public class Turn
 {
     public Unit actor;
-    public GameObject ability;
+    public Ability ability;
     public List<Tile> targets;
     public bool hasUnitMoved;
     public bool hasUnitActed;
     public bool lockMove;
+    public PlanOfAttack plan;
     Tile startTile;
     Directions startDir;
 
@@ -21,6 +22,7 @@ public class Turn
         lockMove = false;
         startTile = actor.tile;
         startDir = actor.dir;
+        plan = null;
     }
 
     public void UndoMove()

@@ -27,6 +27,16 @@ public class ConfirmAbilityTargetState : BattleState
         FindTargets();
         RefreshPrimaryStatPanel(turn.actor.tile.pos);
         SetTarget(0);
+
+        if (turn.targets.Count > 0)
+        {
+            // Only show this UI for Human controlled units
+            SetTarget(0);
+        }
+
+        // Only show this UI for AI controlled units
+        if (driver.Current == Drivers.Computer)
+            StartCoroutine(ComputerDisplayAbilitySelection());
     }
     public override void Exit()
     {
@@ -91,5 +101,12 @@ public class ConfirmAbilityTargetState : BattleState
             index = 0;
         if (turn.targets.Count > 0)
             RefreshSecondaryStatPanel(turn.targets[index].pos);
+    }
+
+    IEnumerator ComputerDisplayAbilitySelection()
+    {
+        //owner.battleMessageController.Display(turn.ability.name);
+        yield return new WaitForSeconds(2f);
+        owner.ChangeState<PerformAbilityState>();
     }
 }

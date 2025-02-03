@@ -6,7 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Alliance : MonoBehaviour
 {
-    public Alliances type;
+    public Alliances allianceType;
     //public Targets targets;
     public bool confused;
 
@@ -19,12 +19,14 @@ public class Alliance : MonoBehaviour
                 isMatch = other == this;
                 break;
             case Targets.Ally:
-                isMatch = type == other.type;
+                isMatch = allianceType == other.allianceType;
                 break;
             case Targets.Foe:
-                isMatch = (type != other.type) && other.type != Alliances.Neutral;
+                isMatch = (allianceType != other.allianceType) && other.allianceType != Alliances.Neutral;
                 break;
         }
         return confused ? !isMatch : isMatch;
     }
+
+    
 }

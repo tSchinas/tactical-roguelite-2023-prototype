@@ -16,7 +16,8 @@ MonoBehaviour:
   weapon: 
   subweapon: 
   attack: RangedAtk
-  abilityCatalog: Dagger
+  abilityCatalog: Bow
+  strategy: FixedRangedAttack
   locomotions: 0
   alliance: 4
   hp: 2

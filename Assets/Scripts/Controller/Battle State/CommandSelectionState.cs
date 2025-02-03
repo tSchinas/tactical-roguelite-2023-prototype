@@ -1,12 +1,26 @@
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class CommandSelectionState : BaseAbilityMenuState
 {
+    public override void Enter()
+    {
+        base.Enter();
+        statPanelController.ShowPrimary(turn.actor.gameObject);
+        if (driver.Current == Drivers.Computer)
+            StartCoroutine(ComputerTurn());
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        statPanelController.HidePrimary();
+    }
+
     protected override void LoadMenu()
     {
-        if(menuOptions==null)
+        if (menuOptions == null)
         {
             menuTitle = "Commands";
             menuOptions = new List<string>(3);
@@ -14,34 +28,23 @@ public class CommandSelectionState : BaseAbilityMenuState
             menuOptions.Add("Action");
             menuOptions.Add("Wait");
         }
+
         abilityMenuPanelController.Show(menuTitle, menuOptions);
         abilityMenuPanelController.SetLocked(0, turn.hasUnitMoved);
         abilityMenuPanelController.SetLocked(1, turn.hasUnitActed);
     }
-    public override void Enter()
-    {
-        base.Enter();
-        statPanelController.ShowPrimary(turn.actor.gameObject);
-    }
-    public override void Exit()
-    {
 
-        base.Exit();
-        statPanelController.HidePrimary();
-        
-    }
     protected override void Confirm()
     {
-        Debug.Log("CommandSelectionState.Confirm() fired. abilityMenuPanelController.selection = " + abilityMenuPanelController.selection);
         switch (abilityMenuPanelController.selection)
         {
-            case 0: //move
+            case 0: // Move
                 owner.ChangeState<MoveTargetState>();
                 break;
-            case 1: //action
+            case 1: // Action
                 owner.ChangeState<CategorySelectionState>();
                 break;
-            case 2: //wait
+            case 2: // Wait
                 owner.ChangeState<EndFacingState>();
                 break;
         }
@@ -49,8 +52,7 @@ public class CommandSelectionState : BaseAbilityMenuState
 
     protected override void Cancel()
     {
-        Debug.Log("CommandSelectionState.Cancel() fired. abilityMenuPanelController.selection = " + abilityMenuPanelController.selection);
-        if (turn.hasUnitMoved&&turn.lockMove)
+        if (turn.hasUnitMoved && !turn.lockMove)
         {
             turn.UndoMove();
             abilityMenuPanelController.SetLocked(0, false);
@@ -60,5 +62,23 @@ public class CommandSelectionState : BaseAbilityMenuState
         {
             owner.ChangeState<ExploreState>();
         }
+    }
+
+    IEnumerator ComputerTurn()
+    {
+        if (turn.plan == null)
+        {
+            turn.plan = owner.cpu.Evaluate();
+            turn.ability = turn.plan.ability;
+        }
+
+        yield return new WaitForSeconds(1f);
+
+        if (turn.hasUnitMoved == false && turn.plan.moveLocation != turn.actor.tile.pos)
+            owner.ChangeState<MoveTargetState>();
+        else if (turn.hasUnitActed == false && turn.plan.ability != null)
+            owner.ChangeState<AbilityTargetState>();
+        else
+            owner.ChangeState<EndFacingState>();
     }
 }

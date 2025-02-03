@@ -16,6 +16,8 @@ public class AbilityTargetState : BattleState
         statPanelController.ShowPrimary(turn.actor.gameObject);
         if (range.DirectionOriented)
             RefreshSecondaryStatPanel(pos);
+        if (driver.Current == Drivers.Computer)
+            StartCoroutine(ComputerHighlightTarget());
     }
     public override void Exit()
     {
@@ -67,5 +69,29 @@ public class AbilityTargetState : BattleState
     {
         tiles = range.GetTilesInRange(board);
         board.SelectTiles(tiles);
+    }
+
+    IEnumerator ComputerHighlightTarget()
+    {
+        if (range.DirectionOriented)
+        {
+            ChangeDirection(turn.plan.attackDirection.GetNormal());
+            yield return new WaitForSeconds(0.25f);
+        }
+        else
+        {
+            Point cursorPos = pos;
+            while (cursorPos != turn.plan.fireLocation)
+            {
+                if (cursorPos.x < turn.plan.fireLocation.x) cursorPos.x++;
+                if (cursorPos.x > turn.plan.fireLocation.x) cursorPos.x--;
+                if (cursorPos.y < turn.plan.fireLocation.y) cursorPos.y++;
+                if (cursorPos.y > turn.plan.fireLocation.y) cursorPos.y--;
+                SelectTile(cursorPos);
+                yield return new WaitForSeconds(0.25f);
+            }
+        }
+        yield return new WaitForSeconds(0.5f);
+        owner.ChangeState<ConfirmAbilityTargetState>();
     }
 }

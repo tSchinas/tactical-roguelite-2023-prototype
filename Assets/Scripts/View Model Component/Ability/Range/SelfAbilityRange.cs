@@ -11,4 +11,5 @@ public class SelfAbilityRange : AbilityRange
         retValue.Add(unit.tile);
         return retValue;
     }
+    public override bool positionOriented { get { return false; } }
 }

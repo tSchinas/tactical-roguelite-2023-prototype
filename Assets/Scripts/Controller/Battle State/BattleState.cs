@@ -15,17 +15,25 @@ public abstract class BattleState : State
     public AbilityMenuPanelController abilityMenuPanelController { get { return owner.abilityMenuPanelController; } }
     public Turn turn { get { return owner.turn; } }
     public List<Unit> units { get { return owner.units; } }
-    public StatPanelController statPanelController { get { return owner.statPanelController; } } 
+    public StatPanelController statPanelController { get { return owner.statPanelController; } }
 
+    protected Driver driver;
+    public override void Enter()
+    {
+        driver = (turn.actor != null) ? turn.actor.GetComponent<Driver>() : null;
+        base.Enter();
+    }
+    protected override void AddListeners()
+    {
+        if (driver == null || driver.Current == Drivers.Human)
+        {
+            InputController.moveEvent += OnMove;
+            InputController.fireEvent += OnFire;
+        }
+    }
     protected virtual void Awake()
     {
         owner = GetComponent<BattleController>();//gets owner reference used above
-    }
-
-    protected override void AddListeners()
-    {
-        InputController.moveEvent += OnMove;
-        InputController.fireEvent += OnFire;
     }
 
     protected override void RemoveListeners()

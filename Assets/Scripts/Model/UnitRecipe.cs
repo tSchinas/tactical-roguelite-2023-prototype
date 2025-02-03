@@ -10,6 +10,7 @@ public class UnitRecipe : ScriptableObject
     public string subweapon;
     public string attack;
     public string abilityCatalog;
+    public string strategy;
     public Locomotions locomotions;
     public Alliances alliance;
     public int hp;

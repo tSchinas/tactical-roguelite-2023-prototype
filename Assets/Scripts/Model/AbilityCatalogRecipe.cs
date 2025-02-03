@@ -9,7 +9,7 @@ public class AbilityCatalogRecipe : ScriptableObject
     public class Category
     {
         public string name;
-        public string[] entries;
+        public string[] abilities;
     }
     public Category[] categories;
 }
