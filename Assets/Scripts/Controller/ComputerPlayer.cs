@@ -29,9 +29,17 @@ public class ComputerPlayer : MonoBehaviour
             DefaultAttackPattern(poa);
 
         if (IsPositionIndependent(poa))
+        {
+            Debug.Log($"Before PlanPositionIndependent: Ability = {poa.ability?.name}");
             PlanPositionIndependent(poa);
+            Debug.Log($"After PlanPositionIndependent: Ability = {poa.ability?.name}");
+        }
         else if (IsDirectionIndependent(poa))
+        {
+            Debug.Log($"Before PlanDirectionIndependent: Ability = {poa.ability?.name}");
             PlanDirectionIndependent(poa);
+            Debug.Log($"After PlanDirectionIndependent: Ability = {poa.ability?.name}");
+        }
         else
             PlanDirectionDependent(poa);
 
@@ -185,24 +193,28 @@ public class ComputerPlayer : MonoBehaviour
     {
         int bestScore = 1;
         List<AttackOption> bestOptions = new List<AttackOption>();
+        Debug.Log($"List of attack options contains {list.Count} items on PickBestOption() call");
         for (int i = 0; i < list.Count; ++i)
         {
             AttackOption option = list[i];
             int score = option.GetScore(actor, poa.ability);
             if (score > bestScore)
             {
+                Debug.Log($"New best score! ({score})");
                 bestScore = score;
                 bestOptions.Clear();
                 bestOptions.Add(option);
             }
             else if (score == bestScore)
             {
+                Debug.Log($"New item added to list of best options! {option.ToString()}");
                 bestOptions.Add(option);
             }
         }
 
         if (bestOptions.Count == 0)
         {
+            Debug.Log($"Number of options to pick from: {bestOptions.Count}");
             poa.ability = null; // Clear ability as a sign not to perform it
             return;
         }
@@ -212,7 +224,7 @@ public class ComputerPlayer : MonoBehaviour
         for (int i = 0; i < bestOptions.Count; ++i)
         {
             AttackOption option = bestOptions[i];
-            int score = option.bestAngleBasedScore;
+            int score = 0;
             if (score > bestScore)
             {
                 bestScore = score;
@@ -234,7 +246,8 @@ public class ComputerPlayer : MonoBehaviour
     void FindNearestFoe()
     {
         nearestFoe = null;
-        bc.Board.Search(actor.tile, delegate (Tile arg1, Tile arg2) {
+        bc.Board.Search(actor.tile, delegate (Tile arg1, Tile arg2)
+        {
             if (nearestFoe == null && arg2.content != null)
             {
                 Alliance other = arg2.content.GetComponentInChildren<Alliance>();

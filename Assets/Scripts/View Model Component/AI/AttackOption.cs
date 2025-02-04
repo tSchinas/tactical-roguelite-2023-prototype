@@ -18,9 +18,9 @@ public class AttackOption
     public Tile target;
     public Directions direction;
     public List<Tile> areaTargets = new List<Tile>();
-    public bool isCasterMatch;
+    public bool isCasterMatch; //tracker for whether target location is a good option to move to
     public Tile bestMoveTile { get; private set; }
-    public int bestAngleBasedScore { get; private set; }
+    //public int bestAngleBasedScore { get; private set; }
     List<Mark> marks = new List<Mark>();
     List<Tile> moveTargets = new List<Tile>();
 
@@ -40,8 +40,11 @@ public class AttackOption
     {
         GetBestMoveTarget(caster, ability);
         if (bestMoveTile == null)
-            return 0;
-        int score = 0;
+        {
+            Debug.LogWarning("AttackOption.GetScore() returning 0!");
+            return 1;
+        }
+        int score = 1;
         for (int i = 0; i < marks.Count; ++i)
         {
             if (marks[i].isMatch)
@@ -56,7 +59,10 @@ public class AttackOption
     void GetBestMoveTarget(Unit caster, Ability ability)
     {
         if (moveTargets.Count == 0)
+        {
+            Debug.LogWarning("AttackOption.GetBestMoveTarget() returned 0 move targets");
             return;
+        }
 
 
         bestMoveTile = moveTargets[UnityEngine.Random.Range(0, moveTargets.Count)];
