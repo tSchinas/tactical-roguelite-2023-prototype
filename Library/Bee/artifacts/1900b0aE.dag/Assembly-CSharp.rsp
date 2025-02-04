@@ -438,6 +438,7 @@
 "Assets/Scripts/View Model Component/AI/AbilityPicker/BaseAbilityPicker.cs"
 "Assets/Scripts/View Model Component/AI/AbilityPicker/FixedAbilityPicker.cs"
 "Assets/Scripts/View Model Component/AI/AbilityPicker/RandomAbilityPicker.cs"
+"Assets/Scripts/View Model Component/AI/AttackOption.cs"
 "Assets/Scripts/View Model Component/AI/AttackPattern.cs"
 "Assets/Scripts/View Model Component/AI/PlanOfAttack.cs"
 "Assets/Scripts/View Model Component/Board.cs"

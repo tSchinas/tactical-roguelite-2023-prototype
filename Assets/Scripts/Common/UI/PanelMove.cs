@@ -12,8 +12,8 @@ public class PanelMove : MonoBehaviour
     public Position CurrentPosition { get; private set; }
     public Tweener Transition { get; private set; }
     public bool InTransition { get { return Transition != null; } }
+    
     [Serializable]
-
     public class Position
     {
         public string name;
@@ -77,7 +77,7 @@ public class PanelMove : MonoBehaviour
         if (CurrentPosition == null)
             return null;
         if (InTransition)
-            Transition.easingControl.Stop();
+            Transition.Stop();
 
         if (animated)
         {

@@ -1,18 +1,24 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+
 public class ComputerPlayer : MonoBehaviour
 {
+    #region Fields
     BattleController bc;
     Unit actor { get { return bc.turn.actor; } }
     Alliance alliance { get { return actor.GetComponent<Alliance>(); } }
-
     Unit nearestFoe;
+    #endregion
+
+    #region MonoBehaviour
     void Awake()
     {
         bc = GetComponent<BattleController>();
     }
+    #endregion
 
+    #region Public
     public PlanOfAttack Evaluate()
     {
         PlanOfAttack poa = new PlanOfAttack();
@@ -22,16 +28,26 @@ public class ComputerPlayer : MonoBehaviour
         else
             DefaultAttackPattern(poa);
 
-        //if (IsPositionIndependent(poa))
-        //    PlanPositionIndependent(poa);
-        //else if (IsDirectionIndependent(poa))
-        //    PlanDirectionIndependent(poa);
-        //else
-        //    PlanDirectionDependent(poa);
+        if (IsPositionIndependent(poa))
+            PlanPositionIndependent(poa);
+        else if (IsDirectionIndependent(poa))
+            PlanDirectionIndependent(poa);
+        else
+            PlanDirectionDependent(poa);
+
         if (poa.ability == null)
             MoveTowardOpponent(poa);
 
         return poa;
+    }
+    #endregion
+
+    #region Private
+    void DefaultAttackPattern(PlanOfAttack poa)
+    {
+        // Just get the first "Attack" ability
+        poa.ability = actor.GetComponentInChildren<Ability>();
+        poa.target = Targets.Foe;
     }
 
     bool IsPositionIndependent(PlanOfAttack poa)
@@ -40,17 +56,17 @@ public class ComputerPlayer : MonoBehaviour
         return range.positionOriented == false;
     }
 
+    bool IsDirectionIndependent(PlanOfAttack poa)
+    {
+        AbilityRange range = poa.ability.GetComponent<AbilityRange>();
+        return !range.DirectionOriented;
+    }
+
     void PlanPositionIndependent(PlanOfAttack poa)
     {
         List<Tile> moveOptions = GetMoveOptions();
         Tile tile = moveOptions[Random.Range(0, moveOptions.Count)];
         poa.moveLocation = poa.fireLocation = tile.pos;
-    }
-
-    bool IsDirectionIndependent(PlanOfAttack poa)
-    {
-        AbilityRange range = poa.ability.GetComponent<AbilityRange>();
-        return !range.DirectionOriented;
     }
 
     void PlanDirectionIndependent(PlanOfAttack poa)
@@ -82,6 +98,7 @@ public class ComputerPlayer : MonoBehaviour
                     ao.direction = actor.dir;
                     RateFireLocation(poa, ao);
                 }
+
                 ao.AddMoveTarget(moveTile);
             }
         }
@@ -120,28 +137,6 @@ public class ComputerPlayer : MonoBehaviour
         PickBestOption(poa, list);
     }
 
-    List<Tile> GetMoveOptions()
-    {
-        return actor.GetComponent<Movement>().GetTilesInRange(bc.Board);
-    }
-
-    void RateFireLocation(PlanOfAttack poa, AttackOption option)
-    {
-        AbilityArea area = poa.ability.GetComponent<AbilityArea>();
-        List<Tile> tiles = area.GetTilesInArea(bc.Board, option.target.pos);
-        option.areaTargets = tiles;
-        option.isCasterMatch = IsAbilityTargetMatch(poa, actor.tile);
-        for (int i = 0; i < tiles.Count; ++i)
-        {
-            Tile tile = tiles[i];
-            if (actor.tile == tiles[i] || !poa.ability.IsTarget(tile))
-                continue;
-
-            bool isMatch = IsAbilityTargetMatch(poa, tile);
-            option.AddMark(tile, isMatch);
-        }
-    }
-
     bool IsAbilityTargetMatch(PlanOfAttack poa, Tile tile)
     {
         bool isMatch = false;
@@ -153,7 +148,37 @@ public class ComputerPlayer : MonoBehaviour
             if (other != null && alliance.IsMatch(other, poa.target))
                 isMatch = true;
         }
+
         return isMatch;
+    }
+
+    List<Tile> GetMoveOptions()
+    {
+
+        List<Tile> moveOptions = actor.GetComponent<Movement>().GetTilesInRange(bc.Board);
+        if (!moveOptions.Contains(actor.tile))
+        {
+            moveOptions.Add(actor.tile);
+        }
+        return moveOptions;
+    }
+
+    void RateFireLocation(PlanOfAttack poa, AttackOption option)
+    {
+        AbilityArea area = poa.ability.GetComponent<AbilityArea>();
+        List<Tile> tiles = area.GetTilesInArea(bc.Board, option.target.pos);
+        option.areaTargets = tiles;
+        option.isCasterMatch = IsAbilityTargetMatch(poa, actor.tile);
+
+        for (int i = 0; i < tiles.Count; ++i)
+        {
+            Tile tile = tiles[i];
+            if (actor.tile == tiles[i] || !poa.ability.IsTarget(tile))
+                continue;
+
+            bool isMatch = IsAbilityTargetMatch(poa, tile);
+            option.AddMark(tile, isMatch);
+        }
     }
 
     void PickBestOption(PlanOfAttack poa, List<AttackOption> list)
@@ -175,11 +200,13 @@ public class ComputerPlayer : MonoBehaviour
                 bestOptions.Add(option);
             }
         }
+
         if (bestOptions.Count == 0)
         {
             poa.ability = null; // Clear ability as a sign not to perform it
             return;
         }
+
         List<AttackOption> finalPicks = new List<AttackOption>();
         bestScore = 0;
         for (int i = 0; i < bestOptions.Count; ++i)
@@ -243,43 +270,29 @@ public class ComputerPlayer : MonoBehaviour
                 toCheck = toCheck.prev;
             }
         }
+
         poa.moveLocation = actor.tile.pos;
     }
 
     public Directions DetermineEndFacingDirection()
     {
-        return (Directions)UnityEngine.Random.Range(0, 4);
-    }
-
-    void DefaultAttackPattern(PlanOfAttack poa)
-    {
-        // Just get the first "Attack" ability
-        poa.ability = actor.GetComponentInChildren<Ability>();
-        poa.target = Targets.Foe;
-    }
-    void PlaceholderCode(PlanOfAttack poa)
-    {
-        // Move to a random location within the unit's move range
-        List<Tile> tiles = actor.GetComponent<Movement>().GetTilesInRange(bc.Board);
-        Tile randomTile = (tiles.Count > 0) ? tiles[UnityEngine.Random.Range(0, tiles.Count)] : null;
-        poa.moveLocation = (randomTile != null) ? randomTile.pos : actor.tile.pos;
-        // Pick a random attack direction (for direction based abilities)
-        poa.attackDirection = (Directions)UnityEngine.Random.Range(0, 4);
-        // Pick a random fire location based on having moved to the random tile
-        Tile start = actor.tile;
-        actor.Place(randomTile);
-        tiles = poa.ability.GetComponent<AbilityRange>().GetTilesInRange(bc.Board);
-        if (tiles.Count == 0)
+        Directions dir = (Directions)UnityEngine.Random.Range(0, 4);
+        FindNearestFoe();
+        if (nearestFoe != null)
         {
-            poa.ability = null;
-            poa.fireLocation = poa.moveLocation;
+            Directions start = actor.dir;
+            //for (int i = 0; i < 4; ++i)
+            //{
+            //    actor.dir = (Directions)i;
+            //    if (nearestFoe.GetFacing(actor) == Facings.Front)
+            //    {
+            //        dir = actor.dir;
+            //        break;
+            //    }
+            //}
+            actor.dir = start;
         }
-        else
-        {
-            randomTile = tiles[UnityEngine.Random.Range(0, tiles.Count)];
-            poa.fireLocation = randomTile.pos;
-        }
-        actor.Place(start);
+        return dir;
     }
-    
+    #endregion
 }

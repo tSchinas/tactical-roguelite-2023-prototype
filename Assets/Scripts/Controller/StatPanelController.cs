@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class StatPanelController : MonoBehaviour
 {
-
-    #region const
+    #region Const
     const string ShowKey = "Show";
     const string HideKey = "Hide";
     #endregion
 
-    #region fields
+    #region Fields
     [SerializeField] StatPanel primaryPanel;
     [SerializeField] StatPanel secondaryPanel;
 
@@ -18,7 +16,7 @@ public class StatPanelController : MonoBehaviour
     Tweener secondaryTransition;
     #endregion
 
-    // Start is called before the first frame update
+    #region MonoBehaviour
     void Start()
     {
         if (primaryPanel.panel.CurrentPosition == null)
@@ -26,7 +24,9 @@ public class StatPanelController : MonoBehaviour
         if (secondaryPanel.panel.CurrentPosition == null)
             secondaryPanel.panel.SetPosition(HideKey, false);
     }
+    #endregion
 
+    #region Public
     public void ShowPrimary(GameObject obj)
     {
         primaryPanel.Display(obj);
@@ -43,22 +43,25 @@ public class StatPanelController : MonoBehaviour
         secondaryPanel.Display(obj);
         MovePanel(secondaryPanel, ShowKey, ref secondaryTransition);
     }
+
     public void HideSecondary()
     {
         MovePanel(secondaryPanel, HideKey, ref secondaryTransition);
     }
+    #endregion
 
+    #region Private
     void MovePanel(StatPanel obj, string pos, ref Tweener t)
     {
         PanelMove.Position target = obj.panel[pos];
-        if (obj.panel.CurrentPosition!=target)
+        if (obj.panel.CurrentPosition != target)
         {
-            if (t != null && t.easingControl != null)
-                t.easingControl.Stop();
+            if (t != null)
+                t.Stop();
             t = obj.panel.SetPosition(pos, true);
-            t.easingControl.duration = 0.5f;
-            t.easingControl.equation = EasingEquations.EaseOutQuad;
+            t.duration = 0.5f;
+            t.equation = EasingEquations.EaseOutQuad;
         }
     }
-   
+    #endregion
 }

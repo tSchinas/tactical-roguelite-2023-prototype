@@ -47,7 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickers:
   - {fileID: 7839861162672067103}
-  pickedAbility: {fileID: 0}
 --- !u!1 &9070859195178072876
 GameObject:
   m_ObjectHideFlags: 0
