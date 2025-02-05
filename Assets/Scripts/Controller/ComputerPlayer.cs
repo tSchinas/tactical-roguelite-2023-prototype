@@ -166,7 +166,7 @@ public class ComputerPlayer : MonoBehaviour
         List<Tile> moveOptions = actor.GetComponent<Movement>().GetTilesInRange(bc.Board);
         if (!moveOptions.Contains(actor.tile))
         {
-            moveOptions.Add(actor.tile);
+            //moveOptions.Add(actor.tile);
         }
         return moveOptions;
     }
@@ -178,13 +178,25 @@ public class ComputerPlayer : MonoBehaviour
         option.areaTargets = tiles;
         option.isCasterMatch = IsAbilityTargetMatch(poa, actor.tile);
 
+        Debug.LogWarning($"tiles.Count in ComputerPlayer.RateFireLocation() is {tiles.Count}");
+        //
+        //THIS IS THE PROBLEM
+        //option.AddMark() is never reached!
+        //
         for (int i = 0; i < tiles.Count; ++i)
         {
             Tile tile = tiles[i];
-            if (actor.tile == tiles[i] || !poa.ability.IsTarget(tile))
-                continue;
 
+            Debug.Log($"Checking tile {tile.pos} - Content: {(tile.content != null ? tile.content.name : "None")}");
+
+            if (actor.tile == tiles[i] || !poa.ability.IsTarget(tile))
+            {
+                Debug.Log($"Skipping tile {tile.pos} - Self or not a valid target.");
+                continue;
+            }
+            
             bool isMatch = IsAbilityTargetMatch(poa, tile);
+            Debug.Log($"Tile {tile.pos} - Is foe? {isMatch}");
             option.AddMark(tile, isMatch);
         }
     }

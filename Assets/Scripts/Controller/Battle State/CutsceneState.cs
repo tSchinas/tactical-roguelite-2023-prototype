@@ -11,7 +11,7 @@ public class CutsceneState : BattleState
     {
         base.Awake();
         conversationController = owner.GetComponentInChildren<ConversationController>();
-        data = Resources.Load<ConversationData>("Conversations/TestConversation");//currently only loads test conversation
+        data = Resources.Load<ConversationData>("Conversations/Default");//currently only loads test conversation
     }
 
     protected override void OnDestroy()

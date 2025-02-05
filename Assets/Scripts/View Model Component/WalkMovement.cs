@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WalkMovement : Movement
 {
-    protected virtual bool ExpandSearch(Tile from,Tile to)
+    protected override bool ExpandSearch(Tile from, Tile to)
     {
         //skip if distance in height between two tiles is more than unit can jump
         if ((Mathf.Abs(from.height - to.height) > jumpHeight))

@@ -64,11 +64,13 @@
     <Compile Include="Assets\Scripts\Enums\Alliances.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\BaseAbilityMenuState.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\DamageAbilityEffect.cs" />
-    <Compile Include="Assets\Scripts\Common\UI\LayoutAnchor.cs" />
     <Compile Include="Assets\Scripts\Enums\Targets.cs" />
+    <Compile Include="Assets\Scripts\Common\UI\LayoutAnchor.cs" />
     <Compile Include="Assets\Scripts\Factory\UnitFactory.cs" />
     <Compile Include="Assets\Scripts\Common\Animation\TransformLocalPositionTweener.cs" />
+    <Compile Include="Assets\Scripts\Controller\BattleMessageController.cs" />
     <Compile Include="Assets\Scripts\View Model Component\StatPanel.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\AI\PlanOfAttack.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\StaffProficiency.cs" />
     <Compile Include="Assets\Scripts\Common\Animation\RectTransformAnchorPositionTweener.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Range\InfiniteAbilityRange.cs" />
@@ -78,9 +80,10 @@
     <Compile Include="Assets\Scripts\Common\CustomComponentSystem\IPart.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Features\Merchandise.cs" />
     <Compile Include="Assets\Scripts\View Model Component\WalkMovement.cs" />
-    <Compile Include="Assets\Scripts\Model\ConversationData.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Features\Equippable.cs" />
     <Compile Include="Assets\Scripts\Common\CameraRig.cs" />
+    <Compile Include="Assets\Scripts\Model\ConversationData.cs" />
+    <Compile Include="Assets\Scripts\Controller\ComputerPlayer.cs" />
     <Compile Include="Assets\Scripts\Model\Point.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Range\LineAbilityRange.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\BaseAbilityEffect.cs" />
@@ -91,9 +94,10 @@
     <Compile Include="Assets\Scripts\View Model Component\Actor\Alliance.cs" />
     <Compile Include="Assets\Scripts\Model\LevelData.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Range\ConstantAbilityRange.cs" />
-    <Compile Include="Assets\Scripts\Common\State Machine\StateMachine.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\AI\AbilityPicker\BaseAbilityPicker.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\HeroFinalStats.cs" />
     <Compile Include="Assets\Scripts\Exceptions\BaseException.cs" />
+    <Compile Include="Assets\Scripts\Common\State Machine\StateMachine.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\CommandSelectionState.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Range\ConeAbilityRange.cs" />
     <Compile Include="Assets\Scripts\Enums\Locomotions.cs" />
@@ -110,9 +114,10 @@
     <Compile Include="Assets\Scripts\Exceptions\Modifiers\AddValueModifier.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\FlintlockProficiency.cs" />
     <Compile Include="Assets\Scripts\Common\Animation\TransformPositionTweener.cs" />
-    <Compile Include="Assets\Scripts\Common\State Machine\State.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\CardProficiency.cs" />
     <Compile Include="Assets\Scripts\Common\Animation\TransformScaleTweener.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\AI\AttackPattern.cs" />
+    <Compile Include="Assets\Scripts\Common\State Machine\State.cs" />
     <Compile Include="Assets\Scripts\Model\UnitRecipe.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\WandProficiency.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Range\AbilityRange.cs" />
@@ -124,9 +129,12 @@
     <Compile Include="Assets\Scripts\View Model Component\Actor\Equipment.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\CutsceneState.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\SwordProficiency.cs" />
+    <Compile Include="Assets\Scripts\Enums\Drivers.cs" />
     <Compile Include="Assets\Scripts\Controller\TurnManager.cs" />
     <Compile Include="Assets\Scripts\Common\CustomComponentSystem\IWhole.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\AI\AbilityPicker\RandomAbilityPicker.cs" />
     <Compile Include="Assets\Scripts\Common\UI\PanelTests.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\FacingIndicator.cs" />
     <Compile Include="Assets\Scripts\Enums\EquipSlots.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\BattleState.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Area of Effect\UnitAbilityArea.cs" />
@@ -137,9 +145,9 @@
     <Compile Include="Assets\Scripts\Exceptions\Modifiers\Modifier.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Tile.cs" />
     <Compile Include="Assets\Scripts\Exceptions\Modifiers\ClampValueModifier.cs" />
-    <Compile Include="Assets\Scripts\Exceptions\Modifiers\MaxValueModifier.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\GreatswordProficiency.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Effect Target\KOdAbilityEffectTarget.cs" />
+    <Compile Include="Assets\Scripts\Exceptions\Modifiers\MaxValueModifier.cs" />
     <Compile Include="Assets\Scripts\Common\NotificationExtensions.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\ExploreState.cs" />
     <Compile Include="Assets\Scripts\Exceptions\Modifiers\MultValueModifier.cs" />
@@ -148,7 +156,10 @@
     <Compile Include="Assets\Scripts\Controller\AbilityMenuPanelController.cs" />
     <Compile Include="Assets\Scripts\Controller\ConversationController.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Area of Effect\SpecifyAbilityArea.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\Actor\Driver.cs" />
     <Compile Include="Assets\Scripts\Common\Poolable.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\AI\AttackOption.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\AI\AbilityPicker\FixedAbilityPicker.cs" />
     <Compile Include="Assets\Scripts\View Model Component\TeleportMovement.cs" />
     <Compile Include="Assets\Scripts\View Model Component\FlyMovement.cs" />
     <Compile Include="Assets\Scripts\Common\Animation\EasingEquations.cs" />
@@ -180,8 +191,8 @@
     <Compile Include="Assets\Scripts\Controller\StatPanelController.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\InitBattleState.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\ConfirmAbilityTargetState.cs" />
-    <Compile Include="Assets\Scripts\Controller\Experience Controller.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\HeroBonusStats.cs" />
+    <Compile Include="Assets\Scripts\Controller\Experience Controller.cs" />
     <Compile Include="Assets\Scripts\Model\Turn.cs" />
     <Compile Include="Assets\Scripts\Common\Animation\EasingControl.cs" />
   </ItemGroup>

@@ -109,7 +109,7 @@ public class DamageAbilityEffect : BaseAbilityEffect
     //    s[StatTypes.HP] -= value;
     //}
     #region private
-    int GetStat(Unit attacker, Unit target, string notification, int startValue)
+    protected override int GetStat(Unit attacker, Unit target, string notification, int startValue)
     {
         var mods = new List<ValueModifier>();
         var info = new Info<Unit, Unit, List<ValueModifier>>(attacker, target, mods);

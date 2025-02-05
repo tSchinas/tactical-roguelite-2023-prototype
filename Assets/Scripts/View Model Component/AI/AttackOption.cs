@@ -42,9 +42,10 @@ public class AttackOption
         if (bestMoveTile == null)
         {
             Debug.LogWarning("AttackOption.GetScore() returning 0!");
-            return 1;
+            return 0;
         }
-        int score = 1;
+        int score = 0;
+        Debug.LogWarning($"marks.Count in AttackOption.GetScore() is {marks.Count}!");
         for (int i = 0; i < marks.Count; ++i)
         {
             if (marks[i].isMatch)

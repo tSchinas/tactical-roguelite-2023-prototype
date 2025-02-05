@@ -27,7 +27,7 @@ public abstract class Movement : MonoBehaviour
         return (retValue);
     }
 
-    public virtual bool ExpandSearch (Tile from, Tile to)
+    protected virtual bool ExpandSearch (Tile from, Tile to)
     {
         return (from.distance + 1) <= range;
     }
