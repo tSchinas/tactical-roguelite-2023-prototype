@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using static UnityEngine.GraphicsBuffer;
 
 public class ComputerPlayer : MonoBehaviour
 {
@@ -178,7 +179,10 @@ public class ComputerPlayer : MonoBehaviour
         option.areaTargets = tiles;
         option.isCasterMatch = IsAbilityTargetMatch(poa, actor.tile);
 
-        Debug.LogWarning($"tiles.Count in ComputerPlayer.RateFireLocation() is {tiles.Count}");
+        foreach (Tile t in tiles)
+        {
+            Debug.Log($"GetTilesInArea() returned tile: {t.pos}");
+        }
         //
         //THIS IS THE PROBLEM
         //option.AddMark() is never reached!
@@ -189,15 +193,22 @@ public class ComputerPlayer : MonoBehaviour
 
             Debug.Log($"Checking tile {tile.pos} - Content: {(tile.content != null ? tile.content.name : "None")}");
 
-            if (actor.tile == tiles[i] || !poa.ability.IsTarget(tile))
+            if (actor.tile == tiles[i])
             {
-                Debug.Log($"Skipping tile {tile.pos} - Self or not a valid target.");
+                Debug.Log($"Skipping tile {tile.pos} - Self ");
                 continue;
             }
-            
-            bool isMatch = IsAbilityTargetMatch(poa, tile);
-            Debug.Log($"Tile {tile.pos} - Is foe? {isMatch}");
-            option.AddMark(tile, isMatch);
+            else if (!poa.ability.IsTarget(tile))
+            {
+                Debug.Log($"Skipping tile {tile.pos} - not a valid target.");
+                continue;
+            }
+            else
+            {
+                bool isMatch = IsAbilityTargetMatch(poa, tile);
+                Debug.Log($"Tile {tile.pos} - Is foe? {isMatch}");
+                option.AddMark(tile, isMatch);
+            }
         }
     }
 

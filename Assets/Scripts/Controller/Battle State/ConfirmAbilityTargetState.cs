@@ -1,50 +1,40 @@
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-/// <summary>
-/// once user has selected direction for range or location within range, enter this state.
-/// potentially highlights new set of tile that shows AOE
-/// </summary>
+
 public class ConfirmAbilityTargetState : BattleState
 {
-    //AbilityEffectTarget[] listTargets;
     List<Tile> tiles;
-    AbilityArea abilityArea;
+    AbilityArea aa;
     int index = 0;
-    /// <summary>
-    /// Enter
-    /// looks through effect targeting components attached to ability and determines valid targets
-    /// targets will show in secondary stat panel
-    /// movement input cycles through targets displayed in stat panel
-    /// </summary>
+
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Entered confirm ability target state.");
-        abilityArea = turn.ability.GetComponent<AbilityArea>();
-        tiles = abilityArea.GetTilesInArea(board, pos);
+        aa = turn.ability.GetComponent<AbilityArea>();
+        tiles = aa.GetTilesInArea(board, pos);
         board.SelectTiles(tiles);
         FindTargets();
         RefreshPrimaryStatPanel(turn.actor.tile.pos);
-        SetTarget(0);
-
         if (turn.targets.Count > 0)
         {
-            // Only show this UI for Human controlled units
+            //if (driver.Current == Drivers.Human)
+            //    hitSuccessIndicator.Show();
             SetTarget(0);
         }
-
-        // Only show this UI for AI controlled units
         if (driver.Current == Drivers.Computer)
             StartCoroutine(ComputerDisplayAbilitySelection());
     }
+
     public override void Exit()
     {
         base.Exit();
         board.DeSelectTiles(tiles);
         statPanelController.HidePrimary();
         statPanelController.HideSecondary();
+        //hitSuccessIndicator.Hide();
     }
+
     protected override void OnMove(object sender, InfoEventArgs<Point> e)
     {
         if (e.info.y > 0 || e.info.x > 0)
@@ -52,56 +42,66 @@ public class ConfirmAbilityTargetState : BattleState
         else
             SetTarget(index - 1);
     }
+
     protected override void OnFire(object sender, InfoEventArgs<int> e)
     {
-        Debug.Log("Confirm target event fired.");
         if (e.info == 0)
         {
-            Debug.Log("e.info == 0 is true");
             if (turn.targets.Count > 0)
             {
-                Debug.Log("valid targets are > 0");
-                Debug.Log("Confirmed. Switching to perform ability state...");
                 owner.ChangeState<PerformAbilityState>();
             }
         }
         else
             owner.ChangeState<AbilityTargetState>();
     }
+
     void FindTargets()
     {
-        Debug.Log("Finding targets...");
         turn.targets = new List<Tile>();
-        AbilityEffectTarget[] targeters = turn.ability.GetComponentsInChildren<AbilityEffectTarget>();
         for (int i = 0; i < tiles.Count; ++i)
-            if (IsTarget(tiles[i], targeters))
+            if (turn.ability.IsTarget(tiles[i]))
                 turn.targets.Add(tiles[i]);
-                
     }
 
-    bool IsTarget(Tile tile, AbilityEffectTarget[] list)
-    {
-        for (int i = 0; i < list.Length; ++i)
-        {
-            if (list[i].IsTarget(tile))
-            {
-                return true;
-            }
-            
-        }
-        return false;
-    }
     void SetTarget(int target)
     {
-        Debug.Log("Target set.");
         index = target;
         if (index < 0)
             index = turn.targets.Count - 1;
         if (index >= turn.targets.Count)
             index = 0;
+
         if (turn.targets.Count > 0)
+        {
             RefreshSecondaryStatPanel(turn.targets[index].pos);
+            //UpdateHitSuccessIndicator();
+        }
     }
+
+    //void UpdateHitSuccessIndicator()
+    //{
+    //    int chance = 0;
+    //    int amount = 0;
+    //    Tile target = turn.targets[index];
+
+    //    Transform obj = turn.ability.transform;
+    //    for (int i = 0; i < obj.childCount; ++i)
+    //    {
+    //        AbilityEffectTarget targeter = obj.GetChild(i).GetComponent<AbilityEffectTarget>();
+    //        if (targeter.IsTarget(target))
+    //        {
+    //            HitRate hitRate = targeter.GetComponent<HitRate>();
+    //            chance = hitRate.Calculate(target);
+
+    //            BaseAbilityEffect effect = targeter.GetComponent<BaseAbilityEffect>();
+    //            amount = effect.Predict(target);
+    //            break;
+    //        }
+    //    }
+
+    //    hitSuccessIndicator.SetStats(chance, amount);
+    //}
 
     IEnumerator ComputerDisplayAbilitySelection()
     {

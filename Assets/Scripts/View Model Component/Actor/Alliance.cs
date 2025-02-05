@@ -11,6 +11,7 @@ public class Alliance : MonoBehaviour
     public bool IsMatch(Alliance other, Targets targets)
     {
         bool isMatch = false;
+        Debug.Log($"other alliance is {other.allianceType} and Targets is {targets}");
         switch (targets)
         {
             case Targets.Self:

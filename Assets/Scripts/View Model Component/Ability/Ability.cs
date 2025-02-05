@@ -28,7 +28,7 @@ public class Ability : MonoBehaviour
     }
     public bool IsTarget(Tile tile)
     {
-        Transform obj = tile.gameObject.transform;
+        Transform obj = transform;
         for (int i = 0; i<obj.childCount; i++)
         {
             AbilityEffectTarget targeter = obj.GetChild(i).GetComponent<AbilityEffectTarget>();

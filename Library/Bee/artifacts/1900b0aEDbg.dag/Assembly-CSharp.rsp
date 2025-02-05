@@ -423,6 +423,7 @@
 "Assets/Scripts/View Model Component/Ability/DamageAbilityEffect.cs"
 "Assets/Scripts/View Model Component/Ability/Effect Target/AbilityEffectTarget.cs"
 "Assets/Scripts/View Model Component/Ability/Effect Target/DefaultAbilityEffectTarget.cs"
+"Assets/Scripts/View Model Component/Ability/Effect Target/EnemyAbilityEffectTarget.cs"
 "Assets/Scripts/View Model Component/Ability/Effect Target/KOdAbilityEffectTarget.cs"
 "Assets/Scripts/View Model Component/Ability/Range/AbilityRange.cs"
 "Assets/Scripts/View Model Component/Ability/Range/ConeAbilityRange.cs"

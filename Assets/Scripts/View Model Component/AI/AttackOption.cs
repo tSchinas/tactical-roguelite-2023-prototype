@@ -27,8 +27,8 @@ public class AttackOption
     public void AddMoveTarget(Tile tile)
     {
         // Dont allow moving to a tile that would negatively affect the caster
-        if (!isCasterMatch && areaTargets.Contains(tile))
-            return;
+        //if (!isCasterMatch && areaTargets.Contains(tile))
+        //    return;
         moveTargets.Add(tile);
     }
     public void AddMark(Tile tile, bool isMatch)

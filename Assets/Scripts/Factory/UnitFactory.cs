@@ -44,6 +44,7 @@ public class UnitFactory
             return new GameObject(name);
         }
         GameObject instance = GameObject.Instantiate(prefab);
+        instance.name = instance.name.Replace("(Clone)", "");
         return instance;
     }
     static void AddStats(GameObject obj, UnitRecipe recipe)

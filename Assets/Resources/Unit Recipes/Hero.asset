@@ -17,6 +17,7 @@ MonoBehaviour:
   subweapon: 
   attack: Attack
   abilityCatalog: Dagger
+  strategy: 
   locomotions: 0
   alliance: 2
   hp: 5

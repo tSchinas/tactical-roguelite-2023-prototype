@@ -9,11 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6897455865881744929}
-  - component: {fileID: 5789101511857334574}
   - component: {fileID: 3760513713480973877}
   - component: {fileID: 653849944006643354}
-  - component: {fileID: 7229026910781789701}
   - component: {fileID: -6194235125102392338}
+  - component: {fileID: 1808964168738874552}
   m_Layer: 0
   m_Name: RangedAtk
   m_TagString: Untagged
@@ -36,20 +35,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5789101511857334574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7903189738290028978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 108ae64319d4a754f9beee6a1ff91607, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontal: 5
-  vertical: 5
 --- !u!114 &3760513713480973877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,18 +61,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityPower: 0
   hits: 1
---- !u!114 &7229026910781789701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7903189738290028978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82a02d478ad60a94aaf40ed18173c261, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-6194235125102392338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,3 +73,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91040c31a0dba304cb93315716993d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1808964168738874552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7903189738290028978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f59e873d3778143b9390d40aa77738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontal: 4
+  vertical: 2147483647
