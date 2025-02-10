@@ -108,6 +108,8 @@
     <Compile Include="Assets\Scripts\View Model Component\Features\Feature.cs" />
     <Compile Include="Assets\Scripts\Extensions\DirectionsExtensions.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\SpearProficiency.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\Ability\Effect Target\EnemyAbilityEffectTarget.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\Item.cs" />
     <Compile Include="Assets\Scripts\Common\NotificationCenter.cs" />
     <Compile Include="Assets\Scripts\Common\Animation\Vector3Tweener.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\EndFacingState.cs" />
@@ -123,6 +125,7 @@
     <Compile Include="Assets\Scripts\View Model Component\Ability\Range\AbilityRange.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\BowProficiency.cs" />
     <Compile Include="Assets\Scripts\Common\Animation\AnchorTests.cs" />
+    <Compile Include="Assets\Scripts\Enums\WeaponTypes.cs" />
     <Compile Include="Assets\Scripts\Exceptions\Modifiers\ValueModifier.cs" />
     <Compile Include="Assets\Scripts\Common\Animation\Tweener.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Range\SelfAbilityRange.cs" />
@@ -143,6 +146,7 @@
     <Compile Include="Assets\Scripts\View Model Component\Ability\Effect Target\AbilityEffectTarget.cs" />
     <Compile Include="Assets\Scripts\demo.cs" />
     <Compile Include="Assets\Scripts\Exceptions\Modifiers\Modifier.cs" />
+    <Compile Include="Assets\PlayableUnit.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Tile.cs" />
     <Compile Include="Assets\Scripts\Exceptions\Modifiers\ClampValueModifier.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\GreatswordProficiency.cs" />
