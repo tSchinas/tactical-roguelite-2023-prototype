@@ -18,6 +18,7 @@ public class InitBattleState : BattleState
         SelectTile(p);
         
         SpawnTestUnits(); //new placeholder function
+        SpawnTestWeapon(); //placeholder test function
         InitializeUnitLists();
         yield return null;
         owner.facingIndicator.gameObject.SetActive(false);
@@ -50,6 +51,23 @@ public class InitBattleState : BattleState
         SelectTile(units[0].tile.pos);
     
     
+    }
+
+    void SpawnTestWeapon()
+    {
+        WeaponTypes[] weapons = new WeaponTypes[]
+        {
+            WeaponTypes.Dagger
+        };
+        for (int i = 0; i < weapons.Length; ++i)
+        {
+            PlayableUnit unit = FindObjectOfType<PlayableUnit>();
+            GameObject instance = WeaponFactory.Create(weapons[i]);
+            unit.eqMainWeapon = instance.GetComponent<Weapon>();
+            instance.transform.SetParent(unit.transform);
+        }
+        
+        
     }
     private void InitializeUnitLists()
     {

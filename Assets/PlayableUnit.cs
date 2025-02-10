@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class PlayableUnit : Unit
 {
-    WeaponTypes mainWeaponType;
-    WeaponTypes subWeaponType;
+    public Weapon eqMainWeapon;
+    public Weapon eqSubWeapon;
+    public Armor eqArmor;
+    public Artifact eqArtifact;
     
 
-    void OnEquip()
-    {
-        
-    }
+    
 }

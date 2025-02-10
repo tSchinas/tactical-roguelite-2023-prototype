@@ -19,7 +19,9 @@ public class UnitFactory
     {
         GameObject obj = InstantiatePrefab("Units/" + recipe.model);
         obj.name = recipe.name;
-        obj.AddComponent<Unit>();
+
+        AddAttackPattern(obj, recipe.strategy);
+        AddUnitScript(obj);
         AddStats(obj, recipe);
         AddLocomotion(obj, recipe.locomotions);
         //obj.AddComponent<Status>();
@@ -31,7 +33,7 @@ public class UnitFactory
         AddAttack(obj, recipe.attack);
         AddAbilityCatalog(obj, recipe.abilityCatalog);
         AddAlliance(obj, recipe.alliance);
-        AddAttackPattern(obj, recipe.strategy);
+        
         return obj;
     }
 
@@ -138,6 +140,19 @@ public class UnitFactory
             driver.normal = Drivers.Computer;
             GameObject instance = InstantiatePrefab("Attack Pattern/" + name);
             instance.transform.SetParent(obj.transform);
+        }
+    }
+
+    static void AddUnitScript(GameObject obj)
+    {
+        Driver driver = obj.GetComponent<Driver>();
+        if(driver.normal == Drivers.Human)
+        {
+            obj.AddComponent<PlayableUnit>();
+        }
+        else
+        {
+            obj.AddComponent<Unit>();
         }
     }
 }
