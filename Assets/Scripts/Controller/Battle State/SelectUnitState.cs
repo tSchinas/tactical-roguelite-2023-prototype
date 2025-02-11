@@ -18,6 +18,9 @@ public class SelectUnitState : BattleState
     {
         index = (index + 1) % units.Count;
         turn.Change(units[index]);
+        Stats s = units[index].GetComponentInParent<Stats>();
+        if (s[StatTypes.AP] < s[StatTypes.MAP])
+            s[StatTypes.AP] += 1;
         RefreshPrimaryStatPanel(pos);
         yield return null;
         owner.ChangeState<CommandSelectionState>();

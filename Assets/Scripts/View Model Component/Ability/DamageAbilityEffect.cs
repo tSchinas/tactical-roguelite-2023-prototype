@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 public class DamageAbilityEffect : BaseAbilityEffect
 {
@@ -62,21 +63,34 @@ public class DamageAbilityEffect : BaseAbilityEffect
 
         
 
-        //int abilityPower = 
-
-        //int attack = GetStat(attacker, defender, GetAttackNotification, 0);
-        //int power = GetStat(attacker, defender, GetPowerNotification, 0);
-        //int defense = GetStat(attacker, defender, GetDefenseNotification, 0);
-        
+        //=====
+        //get attacker information
+        //=====
         int attack = attacker.GetComponent<Stats>()[StatTypes.ATK];
-        //int power = 0;
+        int attackerAtkBonuses = 0;
+        Item[] attackerItems = attacker.GetComponentsInChildren<Item>();
+        if (attackerItems.Length > 0)
+        {
+            attackerAtkBonuses = attackerItems.Sum(item => item.GetStat<int>("atkBonus"));
+        }
+        
+
+        //=====
+        //get defender information
+        //=====
         int defense = defender.GetComponent<Stats>()[StatTypes.DEF];
+        int defenderDefBonuses = 0;
+        Item[] defenderItems = defender.GetComponentsInChildren<Item>();
+        if (defenderItems.Length > 0)
+        {
+            defenderDefBonuses = defenderItems.Sum(item => item.GetStat<int>("defBonus"));
+        }
 
-        int damage = (attack+abilityPower) - defense;
+
+        int damage = (attack+abilityPower+attackerAtkBonuses) - (defense+defenderDefBonuses);
         damage = Mathf.Max(damage, 0);
-
-        //damage = GetStat(attacker, defender, TweakDamageNotification, damage);
         damage = Mathf.Clamp(damage, minDamage, maxDamage);
+        
         return damage;
     }
 

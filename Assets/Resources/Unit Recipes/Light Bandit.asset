@@ -19,7 +19,7 @@ MonoBehaviour:
   abilityCatalog: Bow
   strategy: FixedRangedAttack
   locomotions: 0
-  alliance: 1
+  alliance: 4
   hp: 2
   mhp: 2
   ap: 3

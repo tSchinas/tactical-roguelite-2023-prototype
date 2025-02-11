@@ -18,8 +18,6 @@ public class ConfirmAbilityTargetState : BattleState
         RefreshPrimaryStatPanel(turn.actor.tile.pos);
         if (turn.targets.Count > 0)
         {
-            //if (driver.Current == Drivers.Human)
-            //    hitSuccessIndicator.Show();
             SetTarget(0);
         }
         if (driver.Current == Drivers.Computer)
@@ -32,7 +30,7 @@ public class ConfirmAbilityTargetState : BattleState
         board.DeSelectTiles(tiles);
         statPanelController.HidePrimary();
         statPanelController.HideSecondary();
-        //hitSuccessIndicator.Hide();
+        
     }
 
     protected override void OnMove(object sender, InfoEventArgs<Point> e)
@@ -75,33 +73,9 @@ public class ConfirmAbilityTargetState : BattleState
         if (turn.targets.Count > 0)
         {
             RefreshSecondaryStatPanel(turn.targets[index].pos);
-            //UpdateHitSuccessIndicator();
+            
         }
     }
-
-    //void UpdateHitSuccessIndicator()
-    //{
-    //    int chance = 0;
-    //    int amount = 0;
-    //    Tile target = turn.targets[index];
-
-    //    Transform obj = turn.ability.transform;
-    //    for (int i = 0; i < obj.childCount; ++i)
-    //    {
-    //        AbilityEffectTarget targeter = obj.GetChild(i).GetComponent<AbilityEffectTarget>();
-    //        if (targeter.IsTarget(target))
-    //        {
-    //            HitRate hitRate = targeter.GetComponent<HitRate>();
-    //            chance = hitRate.Calculate(target);
-
-    //            BaseAbilityEffect effect = targeter.GetComponent<BaseAbilityEffect>();
-    //            amount = effect.Predict(target);
-    //            break;
-    //        }
-    //    }
-
-    //    hitSuccessIndicator.SetStats(chance, amount);
-    //}
 
     IEnumerator ComputerDisplayAbilitySelection()
     {

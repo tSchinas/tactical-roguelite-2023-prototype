@@ -25,7 +25,7 @@ public class CommandSelectionState : BaseAbilityMenuState
             menuTitle = "Commands";
             menuOptions = new List<string>(3);
             menuOptions.Add("Move");
-            menuOptions.Add("Action");
+            menuOptions.Add("Actions");
             menuOptions.Add("Wait");
         }
 

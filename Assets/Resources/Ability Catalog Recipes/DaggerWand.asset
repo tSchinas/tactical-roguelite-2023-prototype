@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67554e5b118a2784b8bf94c6b446ceff, type: 3}
   m_Name: DaggerWand
   m_EditorClassIdentifier: 
-  categories: []
+  categories:
+  - name: Dagger & Wand
+    abilities:
+    - Deft Stab

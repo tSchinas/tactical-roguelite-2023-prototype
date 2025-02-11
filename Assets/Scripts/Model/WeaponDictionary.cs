@@ -10,13 +10,13 @@ public class WeaponDictionary : ScriptableObject
     public class WeaponTypeAbilityCatalogPair
     {
         public WeaponTypes type;
-        public AbilityCatalog catalog;
+        public AbilityCatalogRecipe catalog;
     }
 
     public List<WeaponTypeAbilityCatalogPair> keyValuePairs = new();
-    public Dictionary<WeaponTypes,AbilityCatalog> GetWeaponDictionary()
+    public Dictionary<WeaponTypes,AbilityCatalogRecipe> GetWeaponDictionary()
     {
-        Dictionary<WeaponTypes, AbilityCatalog> dictionary = new();
+        Dictionary<WeaponTypes, AbilityCatalogRecipe> dictionary = new();
         foreach(var pair in keyValuePairs)
         {
             dictionary[pair.type] = pair.catalog;

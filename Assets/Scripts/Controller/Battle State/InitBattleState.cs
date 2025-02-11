@@ -57,17 +57,22 @@ public class InitBattleState : BattleState
     {
         WeaponTypes[] weapons = new WeaponTypes[]
         {
-            WeaponTypes.Dagger
+            WeaponTypes.Dagger,
+            WeaponTypes.Wand
         };
+        PlayableUnit unit = FindObjectOfType<PlayableUnit>();
         for (int i = 0; i < weapons.Length; ++i)
         {
-            PlayableUnit unit = FindObjectOfType<PlayableUnit>();
+            
             GameObject instance = WeaponFactory.Create(weapons[i]);
-            unit.eqMainWeapon = instance.GetComponent<Weapon>();
+            if (!unit._eqMainWeapon)
+                unit._eqMainWeapon = instance.GetComponent<Weapon>();
+            else
+                unit._eqSubWeapon = instance.GetComponent<Weapon>();
+            
             instance.transform.SetParent(unit.transform);
         }
-        
-        
+        unit.EvaluateAbilityCatalog(unit);
     }
     private void InitializeUnitLists()
     {

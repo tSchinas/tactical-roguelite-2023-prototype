@@ -93,6 +93,7 @@
     <Compile Include="Assets\Scripts\Exceptions\Modifiers\MultDeltaModifier.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\SelectUnitState.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Actor\Alliance.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\Ability\Range\ChargeAbilityRange.cs" />
     <Compile Include="Assets\Scripts\Model\LevelData.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Range\ConstantAbilityRange.cs" />
     <Compile Include="Assets\Scripts\View Model Component\AI\AbilityPicker\BaseAbilityPicker.cs" />
@@ -105,8 +106,8 @@
     <Compile Include="Assets\Scripts\Enums\Locomotions.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\ActionSelectionState.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\FanProficiency.cs" />
-    <Compile Include="Assets\Scripts\View Model Component\Movement.cs" />
     <Compile Include="Assets\Scripts\Model\WeaponDictionary.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\Movement.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Actor\Job.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Features\Feature.cs" />
     <Compile Include="Assets\Scripts\Extensions\DirectionsExtensions.cs" />
@@ -157,11 +158,12 @@
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\GreatswordProficiency.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Effect Target\KOdAbilityEffectTarget.cs" />
     <Compile Include="Assets\Scripts\Exceptions\Modifiers\MaxValueModifier.cs" />
-    <Compile Include="Assets\Scripts\Common\NotificationExtensions.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Items\Artifact.cs" />
+    <Compile Include="Assets\Scripts\Common\NotificationExtensions.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\ExploreState.cs" />
     <Compile Include="Assets\Scripts\Exceptions\Modifiers\MultValueModifier.cs" />
     <Compile Include="Assets\Scripts\Common\PoolData.cs" />
+    <Compile Include="Assets\Scripts\Controller\Battle State\SwapWeaponsState.cs" />
     <Compile Include="Assets\Scripts\Controller\BoardController.cs" />
     <Compile Include="Assets\Scripts\Controller\AbilityMenuPanelController.cs" />
     <Compile Include="Assets\Scripts\Controller\ConversationController.cs" />
@@ -175,8 +177,8 @@
     <Compile Include="Assets\Scripts\Common\Animation\EasingEquations.cs" />
     <Compile Include="Assets\Scripts\Common\Animation\RectTransformAnimationExtensions.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\Stats.cs" />
-    <Compile Include="Assets\Scripts\EventArgs\InfoEventArgs.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Items\ItemEffect.cs" />
+    <Compile Include="Assets\Scripts\EventArgs\InfoEventArgs.cs" />
     <Compile Include="Assets\Scripts\Factory\WeaponFactory.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Ability.cs" />
     <Compile Include="Assets\Scripts\Model\Info.cs" />
@@ -184,6 +186,7 @@
     <Compile Include="Assets\Scripts\Controller\InputController.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Features\StatModifierFeature.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Area of Effect\FullAbilityArea.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\Ability\AbilityAPCost.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\MoveSequenceState.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\MoveTargetState.cs" />
     <Compile Include="Assets\Scripts\Enums\StatTypes.cs" />
@@ -206,8 +209,8 @@
     <Compile Include="Assets\Scripts\View Model Component\Stats\HeroBonusStats.cs" />
     <Compile Include="Assets\Scripts\Controller\Experience Controller.cs" />
     <Compile Include="Assets\Scripts\Model\Turn.cs" />
-    <Compile Include="Assets\Scripts\Common\Animation\EasingControl.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Items\Item.cs" />
+    <Compile Include="Assets\Scripts\Common\Animation\EasingControl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

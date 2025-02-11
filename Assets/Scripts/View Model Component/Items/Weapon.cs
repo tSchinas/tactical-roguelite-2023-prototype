@@ -8,20 +8,18 @@ using UnityEngine;
 public class Weapon : Item
 {
     public WeaponTypes type;
-    public override void OnEquip(bool slot)
+    public override void OnEquip(PlayableUnit owner, int slot)
     {
-        PlayableUnit owner = GetComponentInParent<PlayableUnit>();
-        if (slot)
-            owner.eqMainWeapon = this;
-        else
-            owner.eqSubWeapon = this;
 
-        ParseEquippedWeapons(owner);
+        return;
     }
 
-    private void ParseEquippedWeapons(PlayableUnit obj)
+    
+
+    public override void SpawnItem()
     {
-        AbilityCatalog oldCatalog = obj.GetComponentInChildren<AbilityCatalog>();
-        
+        base.SpawnItem();
+        GameObject newWeapon = WeaponFactory.Create(type);
+
     }
 }
