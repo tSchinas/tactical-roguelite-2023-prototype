@@ -20,7 +20,12 @@ public class PerformAbilityState : BattleState
         //todo apply ability effect, etc
         ApplyAbility();
 
-        if (turn.hasUnitMoved)
+        yield return new WaitForSeconds(1);
+        if (IsBattleOver())
+            owner.ChangeState<EndBattleState>();
+        else if (!UnitHasControl())
+            owner.ChangeState<SelectUnitState>();
+        else if (turn.hasUnitMoved)
             owner.ChangeState<EndFacingState>();
         else
             owner.ChangeState<CommandSelectionState>();
@@ -48,6 +53,6 @@ public class PerformAbilityState : BattleState
 
     bool UnitHasControl()
     {
-        return true;
+        return turn.actor.GetComponentInChildren<KnockOutStatusEffect>() == null;
     }
 }

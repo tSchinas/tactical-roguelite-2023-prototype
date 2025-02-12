@@ -26,6 +26,7 @@ public class InitBattleState : BattleState
         yield return null;
         owner.facingIndicator.gameObject.SetActive(false);
         owner.round = owner.gameObject.AddComponent<TurnManager>().Round();
+        AddVictoryCondition();
         owner.ChangeState<CutsceneState>(); 
         Debug.Log("Changed to Cutscene State.");
         //owner.ChangeState<SelectUnitState>();
@@ -60,6 +61,13 @@ public class InitBattleState : BattleState
     {
         
         List<Tile> locations = new List<Tile>(board.tiles.Values);
+        for (int l = 0; l<locations.Count; ++l)
+        {
+            if (locations[l].content)
+            {
+                locations.RemoveAt(l);
+            }
+        }
         for (int i = 0; i < heroes.units.Length; ++i)
         {
             GameObject instance = UnitFactory.Create(heroes.units[i], 0);
@@ -89,6 +97,13 @@ public class InitBattleState : BattleState
     {
         
         List<Tile> locations = new List<Tile>(board.tiles.Values);
+        for (int l = 0; l < locations.Count; ++l)
+        {
+            if (locations[l].content)
+            {
+                locations.RemoveAt(l);
+            }
+        }
         for (int i = 0; i < enemies.units.Length; ++i)
         {
             GameObject instance = UnitFactory.Create(enemies.units[i], 0);
@@ -104,28 +119,33 @@ public class InitBattleState : BattleState
 
         
     }
-    
 
-    void SpawnTestWeapon()
+
+    //void SpawnTestWeapon()
+    //{
+    //    WeaponTypes[] weapons = new WeaponTypes[]
+    //    {
+    //        WeaponTypes.Dagger,
+    //        WeaponTypes.Wand
+    //    };
+    //    PlayableUnit unit = FindObjectOfType<PlayableUnit>();
+    //    for (int i = 0; i < weapons.Length; ++i)
+    //    {
+
+    //        GameObject instance = WeaponFactory.Create(weapons[i]);
+    //        if (!unit._eqMainWeapon)
+    //            unit._eqMainWeapon = instance.GetComponent<Weapon>();
+    //        else
+    //            unit._eqSubWeapon = instance.GetComponent<Weapon>();
+
+    //        instance.transform.SetParent(unit.transform);
+    //    }
+    //    unit.EvaluateAbilityCatalog(unit);
+    //}
+    void AddVictoryCondition()
     {
-        WeaponTypes[] weapons = new WeaponTypes[]
-        {
-            WeaponTypes.Dagger,
-            WeaponTypes.Wand
-        };
-        PlayableUnit unit = FindObjectOfType<PlayableUnit>();
-        for (int i = 0; i < weapons.Length; ++i)
-        {
-            
-            GameObject instance = WeaponFactory.Create(weapons[i]);
-            if (!unit._eqMainWeapon)
-                unit._eqMainWeapon = instance.GetComponent<Weapon>();
-            else
-                unit._eqSubWeapon = instance.GetComponent<Weapon>();
-            
-            instance.transform.SetParent(unit.transform);
-        }
-        unit.EvaluateAbilityCatalog(unit);
+        DefeatAllEnemiesVictoryCondition vc = owner.gameObject.AddComponent<DefeatAllEnemiesVictoryCondition>();
+        
     }
     private void InitializeUnitLists()
     {

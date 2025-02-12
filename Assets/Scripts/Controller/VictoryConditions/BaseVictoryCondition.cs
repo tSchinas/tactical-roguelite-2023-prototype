@@ -21,15 +21,29 @@ public abstract class BaseVictoryCondition : MonoBehaviour
     }
     protected virtual void OnHPDidChangeNotification(object sender, object args)
     {
-        //CheckForGameOver();
+        CheckForGameOver();
     }
-    //protected virtual bool IsDefeated(Unit unit)
-    //{
-    //    Stats health = unit.GetComponent<Stats>();
-    //    if (health)
-    //        return health.MinHP == health.HP;
-
-    //    Stats stats = unit.GetComponent<Stats>();
-    //    return stats[StatTypes.HP] == 0;
-    //}
+    protected virtual bool IsDefeated(Unit unit)
+    {
+        
+        Stats stats = unit.GetComponent<Stats>();
+        return stats[StatTypes.HP] == 0;
+    }
+    protected virtual bool PartyDefeated(Alliances type)
+    {
+        for (int i = 0; i < bc.units.Count; ++i)
+        {
+            Alliance a = bc.units[i].GetComponent<Alliance>();
+            if (a == null)
+                continue;
+            if (a.allianceType == type && !IsDefeated(bc.units[i]))
+                return false;
+        }
+        return true;
+    }
+    protected virtual void CheckForGameOver()
+    {
+        if (PartyDefeated(Alliances.Hero))
+            Victor = Alliances.Enemy;
+    }
 }
