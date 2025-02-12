@@ -31,15 +31,15 @@ public class ComputerPlayer : MonoBehaviour
 
         if (IsPositionIndependent(poa))
         {
-            Debug.Log($"Before PlanPositionIndependent: Ability = {poa.ability?.name}");
+            //Debug.Log($"Before PlanPositionIndependent: Ability = {poa.ability?.name}");
             PlanPositionIndependent(poa);
-            Debug.Log($"After PlanPositionIndependent: Ability = {poa.ability?.name}");
+            //Debug.Log($"After PlanPositionIndependent: Ability = {poa.ability?.name}");
         }
         else if (IsDirectionIndependent(poa))
         {
-            Debug.Log($"Before PlanDirectionIndependent: Ability = {poa.ability?.name}");
+            //Debug.Log($"Before PlanDirectionIndependent: Ability = {poa.ability?.name}");
             PlanDirectionIndependent(poa);
-            Debug.Log($"After PlanDirectionIndependent: Ability = {poa.ability?.name}");
+            //Debug.Log($"After PlanDirectionIndependent: Ability = {poa.ability?.name}");
         }
         else
             PlanDirectionDependent(poa);
@@ -179,34 +179,31 @@ public class ComputerPlayer : MonoBehaviour
         option.areaTargets = tiles;
         option.isCasterMatch = IsAbilityTargetMatch(poa, actor.tile);
 
-        foreach (Tile t in tiles)
-        {
-            Debug.Log($"GetTilesInArea() returned tile: {t.pos}");
-        }
-        //
-        //THIS IS THE PROBLEM
-        //option.AddMark() is never reached!
-        //
+        //foreach (Tile t in tiles)
+        //{
+        //    //Debug.Log($"GetTilesInArea() returned tile: {t.pos}");
+        //}
+        
         for (int i = 0; i < tiles.Count; ++i)
         {
             Tile tile = tiles[i];
 
-            Debug.Log($"Checking tile {tile.pos} - Content: {(tile.content != null ? tile.content.name : "None")}");
+            //Debug.Log($"Checking tile {tile.pos} - Content: {(tile.content != null ? tile.content.name : "None")}");
 
             if (actor.tile == tiles[i])
             {
-                Debug.Log($"Skipping tile {tile.pos} - Self ");
+                //Debug.Log($"Skipping tile {tile.pos} - Self ");
                 continue;
             }
             else if (!poa.ability.IsTarget(tile))
             {
-                Debug.Log($"Skipping tile {tile.pos} - not a valid target.");
+                //Debug.Log($"Skipping tile {tile.pos} - not a valid target.");
                 continue;
             }
             else
             {
                 bool isMatch = IsAbilityTargetMatch(poa, tile);
-                Debug.Log($"Tile {tile.pos} - Is foe? {isMatch}");
+                //Debug.Log($"Tile {tile.pos} - Is foe? {isMatch}");
                 option.AddMark(tile, isMatch);
             }
         }
@@ -216,28 +213,28 @@ public class ComputerPlayer : MonoBehaviour
     {
         int bestScore = 1;
         List<AttackOption> bestOptions = new List<AttackOption>();
-        Debug.Log($"List of attack options contains {list.Count} items on PickBestOption() call");
+        //Debug.Log($"List of attack options contains {list.Count} items on PickBestOption() call");
         for (int i = 0; i < list.Count; ++i)
         {
             AttackOption option = list[i];
             int score = option.GetScore(actor, poa.ability);
             if (score > bestScore)
             {
-                Debug.Log($"New best score! ({score})");
+                //Debug.Log($"New best score! ({score})");
                 bestScore = score;
                 bestOptions.Clear();
                 bestOptions.Add(option);
             }
             else if (score == bestScore)
             {
-                Debug.Log($"New item added to list of best options! {option.ToString()}");
+                //Debug.Log($"New item added to list of best options! {option.ToString()}");
                 bestOptions.Add(option);
             }
         }
 
         if (bestOptions.Count == 0)
         {
-            Debug.Log($"Number of options to pick from: {bestOptions.Count}");
+            //Debug.Log($"Number of options to pick from: {bestOptions.Count}");
             poa.ability = null; // Clear ability as a sign not to perform it
             return;
         }

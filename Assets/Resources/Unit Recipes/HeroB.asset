@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da7447f0a325d234e92719a3fd62a114, type: 3}
+  m_Name: HeroB
+  m_EditorClassIdentifier: 
+  model: HeroB
+  weapon: 
+  subweapon: 
+  attack: RangedAtk
+  abilityCatalog: Bow
+  strategy: 
+  locomotions: 0
+  alliance: 2
+  hp: 4
+  mhp: 4
+  ap: 3
+  map: 3
+  atk: 2
+  def: 0
+  mov: 3
+  jmp: 3

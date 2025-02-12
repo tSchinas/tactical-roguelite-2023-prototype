@@ -29,7 +29,7 @@ public class Stats : MonoBehaviour
             value = Mathf.FloorToInt(exc.GetModifiedValue());
 
             // Did something nullify the change?
-            if (exc.Toggle == false || value == oldValue)
+            if (exc.toggle == false || value == oldValue)
                 return;
         }
 

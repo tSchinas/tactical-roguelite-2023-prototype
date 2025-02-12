@@ -6,17 +6,17 @@ using System.Collections;
 //</summary>
 public class BaseException
 {
-    public bool Toggle { get; private set; }
-    private bool DefaultToggle;
+    public bool toggle { get; private set; }
+    public readonly bool defaultToggle;
 
     public BaseException(bool defaultToggle)
     {
-        this.DefaultToggle = defaultToggle;
-        Toggle = defaultToggle;
+        this.defaultToggle = defaultToggle;
+        toggle = defaultToggle;
     }
 
     public void FlipToggle()
     {
-        Toggle = !DefaultToggle;
+        toggle = !defaultToggle;
     }
 }

@@ -41,11 +41,11 @@ public class AttackOption
         GetBestMoveTarget(caster, ability);
         if (bestMoveTile == null)
         {
-            Debug.LogWarning("AttackOption.GetScore() returning 0!");
+            //Debug.LogWarning("AttackOption.GetScore() returning 0!");
             return 0;
         }
         int score = 0;
-        Debug.LogWarning($"marks.Count in AttackOption.GetScore() is {marks.Count}!");
+        //Debug.LogWarning($"marks.Count in AttackOption.GetScore() is {marks.Count}!");
         for (int i = 0; i < marks.Count; ++i)
         {
             if (marks[i].isMatch)
@@ -61,7 +61,7 @@ public class AttackOption
     {
         if (moveTargets.Count == 0)
         {
-            Debug.LogWarning("AttackOption.GetBestMoveTarget() returned 0 move targets");
+            //Debug.LogWarning("AttackOption.GetBestMoveTarget() returned 0 move targets");
             return;
         }
 

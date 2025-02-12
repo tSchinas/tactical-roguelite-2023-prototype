@@ -60,11 +60,11 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.55f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Model\LevelDataCatalog.cs" />
     <Compile Include="Assets\Scripts\Controller\BattleController.cs" />
     <Compile Include="Assets\Scripts\Enums\Alliances.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Items\Weapon.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\BaseAbilityMenuState.cs" />
-    <Compile Include="Assets\Scripts\View Model Component\Ability\DamageAbilityEffect.cs" />
     <Compile Include="Assets\Scripts\Enums\Targets.cs" />
     <Compile Include="Assets\Scripts\Common\UI\LayoutAnchor.cs" />
     <Compile Include="Assets\Scripts\Factory\UnitFactory.cs" />
@@ -77,6 +77,8 @@
     <Compile Include="Assets\Scripts\View Model Component\Ability\Range\InfiniteAbilityRange.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\AbilityTargetState.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\CategorySelectionState.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\Ability\Effects\BaseAbilityEffect.cs" />
+    <Compile Include="Assets\Scripts\StartGame.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\PerformAbilityState.cs" />
     <Compile Include="Assets\Scripts\Common\CustomComponentSystem\IPart.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Features\Merchandise.cs" />
@@ -87,10 +89,10 @@
     <Compile Include="Assets\Scripts\Controller\ComputerPlayer.cs" />
     <Compile Include="Assets\Scripts\Model\Point.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Range\LineAbilityRange.cs" />
-    <Compile Include="Assets\Scripts\View Model Component\Ability\BaseAbilityEffect.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\AbilityCatalog.cs" />
     <Compile Include="Assets\Unit.cs" />
     <Compile Include="Assets\Scripts\Exceptions\Modifiers\MultDeltaModifier.cs" />
+    <Compile Include="Assets\Scripts\Model\UnitSet.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\SelectUnitState.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Actor\Alliance.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Range\ChargeAbilityRange.cs" />
@@ -100,14 +102,17 @@
     <Compile Include="Assets\Scripts\View Model Component\Stats\HeroFinalStats.cs" />
     <Compile Include="Assets\Scripts\Exceptions\BaseException.cs" />
     <Compile Include="Assets\Scripts\Common\State Machine\StateMachine.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\Ability\Status Effects\DurationStatusCondition.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Items\Armor.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\CommandSelectionState.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\Ability\Status Effects\KnockOutStatusEffect.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Range\ConeAbilityRange.cs" />
     <Compile Include="Assets\Scripts\Enums\Locomotions.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\ActionSelectionState.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\FanProficiency.cs" />
     <Compile Include="Assets\Scripts\Model\WeaponDictionary.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Movement.cs" />
+    <Compile Include="Assets\Scripts\Controller\VictoryConditions\BaseVictoryCondition.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Actor\Job.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Features\Feature.cs" />
     <Compile Include="Assets\Scripts\Extensions\DirectionsExtensions.cs" />
@@ -119,12 +124,14 @@
     <Compile Include="Assets\Scripts\Controller\Battle State\EndFacingState.cs" />
     <Compile Include="Assets\Scripts\Exceptions\Modifiers\AddValueModifier.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\FlintlockProficiency.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\Ability\Status Effects\BaseStatusEffect.cs" />
     <Compile Include="Assets\Scripts\Common\Animation\TransformPositionTweener.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\CardProficiency.cs" />
     <Compile Include="Assets\Scripts\Common\Animation\TransformScaleTweener.cs" />
     <Compile Include="Assets\Scripts\View Model Component\AI\AttackPattern.cs" />
     <Compile Include="Assets\Scripts\Common\State Machine\State.cs" />
     <Compile Include="Assets\Scripts\Enums\ItemEffectRarity.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\Features\AddStatusFeature.cs" />
     <Compile Include="Assets\Scripts\Model\UnitRecipe.cs" />
     <Compile Include="Assets\Scripts\Enums\ItemRarity.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\WandProficiency.cs" />
@@ -138,6 +145,7 @@
     <Compile Include="Assets\Scripts\View Model Component\Actor\Equipment.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\CutsceneState.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\SwordProficiency.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\Ability\Status Effects\PoisonedStatus.cs" />
     <Compile Include="Assets\Scripts\Enums\Drivers.cs" />
     <Compile Include="Assets\Scripts\Controller\TurnManager.cs" />
     <Compile Include="Assets\Scripts\Common\CustomComponentSystem\IWhole.cs" />
@@ -147,6 +155,7 @@
     <Compile Include="Assets\Scripts\Enums\EquipSlots.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\BattleState.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Area of Effect\UnitAbilityArea.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\Ability\Status Effects\Status.cs" />
     <Compile Include="Assets\Scripts\Exceptions\ValueChangeException.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Board.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Effect Target\AbilityEffectTarget.cs" />
@@ -158,12 +167,16 @@
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\GreatswordProficiency.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Effect Target\KOdAbilityEffectTarget.cs" />
     <Compile Include="Assets\Scripts\Exceptions\Modifiers\MaxValueModifier.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\Ability\Effects\DamageAbilityEffect.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Items\Artifact.cs" />
     <Compile Include="Assets\Scripts\Common\NotificationExtensions.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\Ability\Status Effects\StatComparisonCondition.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\ExploreState.cs" />
     <Compile Include="Assets\Scripts\Exceptions\Modifiers\MultValueModifier.cs" />
     <Compile Include="Assets\Scripts\Common\PoolData.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\SwapWeaponsState.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\Features\AddPoisonStatusFeature.cs" />
+    <Compile Include="Assets\Scripts\Controller\AutoStatusController.cs" />
     <Compile Include="Assets\Scripts\Controller\BoardController.cs" />
     <Compile Include="Assets\Scripts\Controller\AbilityMenuPanelController.cs" />
     <Compile Include="Assets\Scripts\Controller\ConversationController.cs" />
@@ -172,6 +185,7 @@
     <Compile Include="Assets\Scripts\Common\Poolable.cs" />
     <Compile Include="Assets\Scripts\View Model Component\AI\AttackOption.cs" />
     <Compile Include="Assets\Scripts\View Model Component\AI\AbilityPicker\FixedAbilityPicker.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\Ability\Status Effects\StatusCondition.cs" />
     <Compile Include="Assets\Scripts\View Model Component\TeleportMovement.cs" />
     <Compile Include="Assets\Scripts\View Model Component\FlyMovement.cs" />
     <Compile Include="Assets\Scripts\Common\Animation\EasingEquations.cs" />
@@ -188,6 +202,8 @@
     <Compile Include="Assets\Scripts\View Model Component\Ability\Area of Effect\FullAbilityArea.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\AbilityAPCost.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\MoveSequenceState.cs" />
+    <Compile Include="Assets\Scripts\Extensions\GameObjectExtensions.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\Ability\Effects\ModifyStatPassiveEffect.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\MoveTargetState.cs" />
     <Compile Include="Assets\Scripts\Enums\StatTypes.cs" />
     <Compile Include="Assets\Scripts\View Model Component\ConversationPanel.cs" />
@@ -211,6 +227,7 @@
     <Compile Include="Assets\Scripts\Model\Turn.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Items\Item.cs" />
     <Compile Include="Assets\Scripts\Common\Animation\EasingControl.cs" />
+    <Compile Include="Assets\Scripts\Model\EnemySetCatalog.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -1072,12 +1089,20 @@
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

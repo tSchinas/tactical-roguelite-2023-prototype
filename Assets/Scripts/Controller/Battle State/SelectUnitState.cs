@@ -2,12 +2,10 @@ using UnityEngine;
 using System.Collections;
 public class SelectUnitState : BattleState
 {
-    int index = -1;
     public override void Enter()
     {
         base.Enter();
         StartCoroutine("ChangeCurrentUnit");
-        
     }
     public override void Exit()
     {
@@ -16,16 +14,11 @@ public class SelectUnitState : BattleState
     }
     IEnumerator ChangeCurrentUnit()
     {
-        index = (index + 1) % units.Count;
-        turn.Change(units[index]);
-        Stats s = units[index].GetComponentInParent<Stats>();
-        if (s[StatTypes.AP] < s[StatTypes.MAP])
-            s[StatTypes.AP] += 1;
+        owner.round.MoveNext();
+        SelectTile(turn.actor.tile.pos);
         RefreshPrimaryStatPanel(pos);
         yield return null;
         owner.ChangeState<CommandSelectionState>();
-       
-        
     }
 
 }

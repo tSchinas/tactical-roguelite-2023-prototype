@@ -19,7 +19,22 @@ public class CategorySelectionState : BaseAbilityMenuState
         for (int i = 0; i < catalog.CategoryCount(); ++i)
             menuOptions.Add(catalog.GetCategory(i).name);
         menuOptions.Add("Weapon Swap");
+        PlayableUnit unit = turn.actor.GetComponent<PlayableUnit>();
+        int count = 1;
+        bool[] locks = new bool[count];
+        if (unit != null)
+        {
+            for(int i = 0; i< count; ++i)
+            { 
+                if (unit.eqSubWeapon == null)
+                {
+                    locks[i] = true;
+                }
+            }
+        }
+        
         abilityMenuPanelController.Show(menuTitle, menuOptions);
+        abilityMenuPanelController.SetLocked(2, locks[0]);
     }
     public override void Enter()
     {

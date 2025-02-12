@@ -9,89 +9,81 @@ using UnityEngine.SceneManagement;
 
 public class TurnManager : MonoBehaviour
 {
-    public List<Unit> playerUnits;
-    public List<Unit> enemyUnits;
+//    #region Constants
 
+//    const int turnActivation = 1000;
+//    const int turnCost = 500;
+//    const int moveCost = 300;
+//    const int actionCost = 200;
+//#endregion
 
-    public enum TurnState { EnemyPlanning, PlayerTurn, EnemyExecution }
-    public TurnState currentState;
+    #region Notifications
+    public const string RoundBeganNotification = "TurnManager.roundBegan";
+    public const string TurnCheckNotification = "TurnManager.turnCheck";
+    public const string TurnBeganNotification = "TurnManager.TurnBeganNotification";
+    public const string TurnCompletedNotification = "TurnManager.turnCompleted";
+    public const string RoundEndedNotification = "TurnManager.roundEnded";
+    #endregion
 
-    private void Awake()
+    #region Public
+    public IEnumerator Round()
     {
-        playerUnits = new List<Unit>();
-        enemyUnits = new List<Unit>();
-        InitializeUnitLists();
-    }
-    void Start()
-    {
-        InitializeUnitLists();
-        StartCoroutine(GameLoop());
-               
-    }
-    private void InitializeUnitLists()
-    {
-        List<Unit> units = GameObject.FindObjectsOfType<Unit>().ToList();
-
-        foreach (var unit in units)
-        {
-            Alliances alliance;
-            alliance = unit.GetComponentInParent<Alliance>().allianceType;
-            if (alliance == Alliances.Hero)
-            {
-                playerUnits.Add(unit);
-            }
-            else if (alliance == Alliances.Enemy)
-            {
-                enemyUnits.Add(unit);
-            }
-        }
-    }
-    //continuously cycles through game phases
-    private IEnumerator GameLoop()
-    {
+        BattleController bc = GetComponent<BattleController>(); ;
         while (true)
         {
-            yield return StartCoroutine(EnemyPlanningPhase());
-            yield return StartCoroutine(PlayerTurnPhase());
-            yield return StartCoroutine(EnemyExecutionPhase());
+            this.PostNotification(RoundBeganNotification);
+
+            List<Unit> units = new List<Unit>(bc.units);
+
+
+            units.Sort((a, b) =>
+            {
+                bool aIsHero = a is PlayableUnit;
+                bool bIsHero = b is PlayableUnit;
+
+                if (aIsHero && !bIsHero)
+                    return -1;
+                if (!aIsHero && bIsHero)
+                    return 1;
+                return 0;
+            });
+            for (int i = units.Count - 1; i >= 0; --i)
+            {
+                if (CanTakeTurn(units[i]))
+                {
+                    bc.turn.Change(units[i]);
+                    units[i].PostNotification(TurnBeganNotification);
+
+                    yield return units;
+                }   
+                
+            }
+
+            this.PostNotification(RoundEndedNotification);
         }
     }
+    #endregion
 
-    private IEnumerator EnemyPlanningPhase()
+    //#region Private
+    bool CanTakeTurn(Unit target)
     {
-        currentState = TurnState.EnemyPlanning;
-        Debug.Log("Enemy is planning their moves.");
-
-        // TODO: Move enemies and mark attack locations
-
-        yield return new WaitForSeconds(1f); // Simulating enemy thinking time
+        BaseException exc = new BaseException(CheckStatus(target));
+        target.PostNotification(TurnCheckNotification, exc);
+        return exc.toggle;
     }
 
-    private IEnumerator PlayerTurnPhase()
+    bool CheckStatus(Unit unit)
     {
-        currentState = TurnState.PlayerTurn;
-        Debug.Log("Player's turn. Waiting for player input.");
-
-        // Wait until the player confirms their actions
-        while (!PlayerHasEndedTurn())
+        Status status = unit.GetComponentInChildren<Status>();
+        if (status.GetComponentInChildren<KnockOutStatusEffect>())
         {
-            yield return null;
+            return false;
         }
+        return true;
     }
-
-    private IEnumerator EnemyExecutionPhase()
-    {
-        currentState = TurnState.EnemyExecution;
-        Debug.Log("Enemies executing attacks.");
-
-        // TODO: Process all enemy attacks based on their planned moves
-
-        yield return new WaitForSeconds(1f); // Simulating attack animations
-    }
-
-    private bool PlayerHasEndedTurn()
-    {
-        // Placeholder condition - this should be tied to UI input
-        return Input.GetKeyDown(KeyCode.Space);
-    }
+    //int GetCounter(Unit target)
+    //{
+    //    return target.GetComponent<Stats>()[StatTypes.CTR];
+    //}
+    //#endregion
 }

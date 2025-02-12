@@ -7,12 +7,16 @@ public class Ability : MonoBehaviour
     public const string CanPerformCheck = "Ability.CanPerformCheck";
     public const string FailedNotification = "Ability.FailedNotification";
     public const string DidPerformNotification = "Ability.DidPerformNotification";
-
+    public bool isPassive = false;
     public bool CanPerform()
     {
+        if(isPassive == true)
+        {
+            return false;
+        }
         BaseException exc = new BaseException(true);
         this.PostNotification(CanPerformCheck, exc);
-        return exc.Toggle;
+        return exc.toggle;
     }
     public void Perform(List<Tile> targets)
     {

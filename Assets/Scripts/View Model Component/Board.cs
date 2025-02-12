@@ -14,75 +14,7 @@ public class Board : MonoBehaviour
     public Point max { get { return _max; } }
     Point _min;
     Point _max;
-    //public int columns = 10;
-    //public int rows = 10;
-    //public Counter gapCounter = new Counter(4, 9);
-    //public GameObject[] floorTiles;
     
-
-    //void InitializeList()//clears list gridPositions and prepares it to generate new board
-    //{
-    //    gridPositions.Clear();
-
-    //    for (int x = 1; x < columns - 1; x++)
-    //    {
-    //        for (int z = 1; z < rows - 1; z++)
-    //        {
-    //            gridPositions.Add(new Vector3(x, 0f, z));
-    //        }
-    //    }
-    //    for (int x = 1; x < columns - 1; x++)
-    //    {
-    //        for (int z = 1; z < rows - 1; z++)
-    //        {
-    //            enemyPositions.Add(new Vector3(x, 0f, z));
-    //        }
-    //    }
-    //}
-
-    //public void SetupScene(int level)
-    //{
-        //BoardSetup();
-        //InitializeList();
-        //LayoutAlliesAtRandom(allyUnits, allyCount, allyCount);
-        //LayoutEnemyAtRandom(enemyUnits, enemyCount, enemyCount);
-    //}
-    //void BoardSetup()
-    //{
-    //    boardHolder = new GameObject("Board").transform;
-    //    floorHolder = new GameObject("Floor").transform;
-
-    //    floorHolder.transform.SetParent(boardHolder);
-
-    //    for (int x = -1; x < columns + 1; x++)
-    //    {
-    //        for (int z = -1; z < columns + 1; z++)
-    //        {
-    //            GameObject toInstantiate = floorTiles[Random.Range(0, floorTiles.Length)];
-    //            GameObject instance = Instantiate(toInstantiate, new Vector3(x, 0f, z), Quaternion.identity) as GameObject;
-    //            instance.transform.SetParent(floorHolder);
-    //        }
-    //    }
-    //}
-
-    
-
-    //void LayoutObjectAtRandom(GameObject[] tileArray, int minimum, int maximum)
-    //{
-    //    int objectCount = Random.Range(minimum, maximum + 1);
-    //    for (int i = 0; i < objectCount; ++i)
-    //    {
-    //        Vector3 randomPosition = RandomPosition();
-    //        GameObject tileChoice = tileArray[Random.Range(0, tileArray.Length)];
-    //        GameObject instance = Instantiate(tileChoice, randomPosition, Quaternion.identity) as GameObject;
-
-    //    }
-    //}
-
-    
-
-
-
     public void Load(LevelData data)
     {
         _min = new Point(int.MaxValue, int.MaxValue);

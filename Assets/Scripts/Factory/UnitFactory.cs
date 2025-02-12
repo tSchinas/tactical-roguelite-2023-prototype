@@ -24,11 +24,9 @@ public class UnitFactory
         AddUnitScript(obj);
         AddStats(obj, recipe);
         AddLocomotion(obj, recipe.locomotions);
-        
         AddAttack(obj, recipe.attack);
-        
         AddAlliance(obj, recipe.alliance);
-
+        obj.AddComponent<Status>();
         if (recipe.abilityCatalog != "")
         {
             AddAbilityCatalog(obj, recipe.abilityCatalog);

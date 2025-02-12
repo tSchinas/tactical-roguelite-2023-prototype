@@ -12,7 +12,11 @@ public class BattleController : StateMachine
     public FacingIndicator facingIndicator;
     public CameraRig CameraRig;
     public Board Board;
+    public LevelDataCatalog levelCatalog;
     public LevelData LevelData;
+    public EnemySetCatalog enemyCatalog;
+    public UnitSet enemySet;
+    public UnitSet heroSet;
     public Transform TileSelectionIndicator;
     public Point pos;
     public AbilityMenuPanelController abilityMenuPanelController;
@@ -20,6 +24,9 @@ public class BattleController : StateMachine
     public List<Unit> units = new List<Unit>();
     public List<Unit> playerUnits = new List<Unit>();
     public List<Unit> enemyUnits = new List<Unit>();
+    public Transform offWorldTransform;
+    public AutoStatusController autoStatusController;
+
 
     public StatPanelController statPanelController;
     //heroPrefab,currentUnit,currentTile are placeholders
@@ -35,6 +42,8 @@ public class BattleController : StateMachine
         else if (instance != this)
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
+        PickLevel();
+        PickEnemies();
         //boardScript = GetComponent<BoardController>;
     }
     // Start is called before the first frame update
@@ -43,61 +52,28 @@ public class BattleController : StateMachine
         //boardScript.SetupScene();
         ChangeState<InitBattleState>();
     }
-    //public void StartBattle()
-    //{
-    //    StartCoroutine(GameLoop());
-    //}
-    //private IEnumerator GameLoop()
-    //{
-    //    while (true)
-    //    {
-    //        yield return StartCoroutine(EnemyPlanningPhase());
-    //        yield return StartCoroutine(PlayerTurnPhase());
-    //        yield return StartCoroutine(EnemyExecutionPhase());
-    //    }
-    //}
-
-    //private IEnumerator EnemyPlanningPhase()
-    //{
-    //    currentState = TurnState.EnemyPlanning;
-    //    Debug.Log("Enemy is planning their moves.");
-
-    //    foreach (var enemy in enemyUnits)
-    //    {
-    //        //enemy.PlanAction();
-    //    }
-
-    //    yield return new WaitForSeconds(1f);
-    //}
-
-    //private IEnumerator PlayerTurnPhase()
-    //{
-    //    currentState = TurnState.PlayerTurn;
-    //    Debug.Log("Player's turn. Waiting for player input.");
-
-    //    while (!PlayerHasEndedTurn())
-    //    {
-    //        yield return null;
-    //    }
-    //}
-
-    //private IEnumerator EnemyExecutionPhase()
-    //{
-    //    currentState = TurnState.EnemyExecution;
-    //    Debug.Log("Enemies executing attacks.");
-
-    //    foreach (var enemy in enemyUnits)
-    //    {
-    //        //enemy.ExecuteAction();
-    //        yield return new WaitForSeconds(0.5f);
-    //    }
-
-    //    yield return new WaitForSeconds(1f);
-    //}
-
-    //private bool PlayerHasEndedTurn()
-    //{
-    //    return Input.GetKeyDown(KeyCode.Space);
-    //}
+    public IEnumerator round;
+    void PickLevel()
+    {
+        if (levelCatalog != null)
+        {
+            LevelData = levelCatalog.GetRandomBoard();
+        }
+        else
+        {
+            Debug.LogError("LevelDataCatalog is not assigned!");
+        }
+    }
+    void PickEnemies()
+    {
+        if (enemyCatalog != null)
+        {
+            enemySet = enemyCatalog.GetRandomEnemySet();
+        }
+        else
+        {
+            Debug.LogError("EnemySetCatalog is not assigned!");
+        }
+    }
 
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Buffers;
 public abstract class BattleState : State
 {
     protected BattleController owner;
@@ -9,13 +10,16 @@ public abstract class BattleState : State
     //if battlecontroller reference changes or updates, states all still point to correct entity
     public CameraRig CameraRig { get { return owner.CameraRig; } }
     public Board board { get { return owner.Board; } }
-    public LevelData LevelData { get { return owner.LevelData; } }
+    public LevelData LevelData { get { return owner.LevelData; }  }
+    public UnitSet enemySet { get { return owner.enemySet; } }
+    public UnitSet heroSet { get { return owner.heroSet; } }
     public Transform TileSelectionIndicator { get { return owner.TileSelectionIndicator; } }
     public Point pos { get { return owner.pos; } set { owner.pos = value; } }
     public AbilityMenuPanelController abilityMenuPanelController { get { return owner.abilityMenuPanelController; } }
     public Turn turn { get { return owner.turn; } }
     public List<Unit> units { get { return owner.units; } }
     public StatPanelController statPanelController { get { return owner.statPanelController; } }
+    //public TurnManager turnManager { get { return owner.turnManager; } }
 
     protected Driver driver;
     public override void Enter()
@@ -84,5 +88,6 @@ public abstract class BattleState : State
         else
             statPanelController.HideSecondary();
     }
+    
 }
  

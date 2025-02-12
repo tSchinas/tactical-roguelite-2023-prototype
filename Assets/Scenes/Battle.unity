@@ -122,6 +122,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &20166230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 20166232}
+  - component: {fileID: 20166231}
+  m_Layer: 0
+  m_Name: AutoStatusController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &20166231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20166230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3029ed71dbdd4784a8040ef406b65391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &20166232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20166230}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 850887819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &68848494
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +600,7 @@ Transform:
   - {fileID: 678272080}
   - {fileID: 1682562730}
   - {fileID: 1918016663}
+  - {fileID: 20166232}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &850887820
@@ -575,7 +620,11 @@ MonoBehaviour:
   facingIndicator: {fileID: 1260807467}
   CameraRig: {fileID: 413503809}
   Board: {fileID: 2103323990}
+  levelCatalog: {fileID: 11400000, guid: 78519a0a49aa822459832d6591ac05a8, type: 2}
   LevelData: {fileID: 11400000, guid: 1d4f5ffeb859fbc43b242b006d40e28c, type: 2}
+  enemyCatalog: {fileID: 11400000, guid: 20d7043ca90dbaf438dedb1835929d3c, type: 2}
+  enemySet: {fileID: 11400000, guid: f5cfb22e8a0dcde46b143a67369f7ad8, type: 2}
+  heroSet: {fileID: 11400000, guid: 82ec3693d395c51469d80ea44dec29f7, type: 2}
   TileSelectionIndicator: {fileID: 1311830686}
   pos:
     x: 0
@@ -584,6 +633,8 @@ MonoBehaviour:
   units: []
   playerUnits: []
   enemyUnits: []
+  offWorldTransform: {fileID: 2130600968}
+  autoStatusController: {fileID: 20166231}
   statPanelController: {fileID: 1918016664}
 --- !u!114 &850887821
 MonoBehaviour:
@@ -1189,6 +1240,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 6763272638720928146, guid: d4557e166a147b240883c9b628a54611, type: 3}
+--- !u!1 &2130600967
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2130600968}
+  m_Layer: 0
+  m_Name: OffWorldTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2130600968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130600967}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1000}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2146191407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,3 +1597,4 @@ SceneRoots:
   - {fileID: 2146191410}
   - {fileID: 1318091917}
   - {fileID: 1654238961}
+  - {fileID: 2130600968}
