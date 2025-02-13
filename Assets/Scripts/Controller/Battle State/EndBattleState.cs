@@ -9,6 +9,6 @@ public class EndBattleState : BattleState
     {
         base.Enter();
         Debug.LogWarning("Battle ended!");
-        SceneManager.LoadScene("", LoadSceneMode.Additive);
+        SceneManager.LoadScene("VictoryScreen", LoadSceneMode.Additive);
     }
 }

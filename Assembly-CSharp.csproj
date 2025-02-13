@@ -83,9 +83,9 @@
     <Compile Include="Assets\Scripts\View Model Component\Features\Merchandise.cs" />
     <Compile Include="Assets\Scripts\View Model Component\WalkMovement.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Features\Equippable.cs" />
+    <Compile Include="Assets\Scripts\Controller\VictoryConditions\DefeatGivenTargetVictoryCondition.cs" />
     <Compile Include="Assets\Scripts\Common\CameraRig.cs" />
     <Compile Include="Assets\Scripts\Model\ConversationData.cs" />
-    <Compile Include="Assets\Scripts\Controller\VictoryConditions\DefeatGivenTargetVictoryCondition.cs" />
     <Compile Include="Assets\Scripts\Controller\ComputerPlayer.cs" />
     <Compile Include="Assets\Scripts\Model\Point.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Range\LineAbilityRange.cs" />
@@ -137,6 +137,7 @@
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\WandProficiency.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Range\AbilityRange.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\BowProficiency.cs" />
+    <Compile Include="Assets\RandomRewardsHandler.cs" />
     <Compile Include="Assets\Scripts\Common\Animation\AnchorTests.cs" />
     <Compile Include="Assets\Scripts\Enums\WeaponTypes.cs" />
     <Compile Include="Assets\Scripts\Exceptions\Modifiers\ValueModifier.cs" />
@@ -144,6 +145,7 @@
     <Compile Include="Assets\Scripts\View Model Component\Ability\Range\SelfAbilityRange.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Actor\Equipment.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\CutsceneState.cs" />
+    <Compile Include="Assets\Scripts\Common\UI\PseudoTransform.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Stats\Weapon Proficiencies\SwordProficiency.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Status Effects\PoisonedStatus.cs" />
     <Compile Include="Assets\Scripts\Enums\Drivers.cs" />
@@ -201,6 +203,7 @@
     <Compile Include="Assets\Scripts\View Model Component\Features\StatModifierFeature.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Area of Effect\FullAbilityArea.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\AbilityAPCost.cs" />
+    <Compile Include="Assets\Scripts\Model\UIRandomDropData.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\MoveSequenceState.cs" />
     <Compile Include="Assets\Scripts\Extensions\GameObjectExtensions.cs" />
     <Compile Include="Assets\Scripts\View Model Component\Ability\Effects\ModifyStatPassiveEffect.cs" />
@@ -221,6 +224,7 @@
     <Compile Include="Assets\Scripts\Model\AbilityCatalogRecipe.cs" />
     <Compile Include="Assets\Scripts\Enums\Directions.cs" />
     <Compile Include="Assets\Scripts\View Model Component\AbilityMenuEntry.cs" />
+    <Compile Include="Assets\Scripts\View Model Component\UI\RandomDropUI.cs" />
     <Compile Include="Assets\Scripts\Controller\StatPanelController.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\InitBattleState.cs" />
     <Compile Include="Assets\Scripts\Controller\Battle State\ConfirmAbilityTargetState.cs" />

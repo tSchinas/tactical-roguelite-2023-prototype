@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a829ee5f60be1da48876a95e5d5ae389, type: 3}
+  m_Name: UIRandomDropData
+  m_EditorClassIdentifier: 
+  commonBackground: {fileID: 21300000, guid: 1cf1dde09b5799348b4dc0605a907618, type: 3}
+  rareBackground: {fileID: 21300000, guid: 9da2ba4991706364995631f884272f1a, type: 3}
+  epicBackground: {fileID: 21300000, guid: 15b3d2ef23aa90049a2a66c2d7c02302, type: 3}
+  legendaryBackground: {fileID: 21300000, guid: ba4d44d9aae6bde41b1616ab2b7b512e, type: 3}
+  daggerIcon: {fileID: 21300000, guid: aa48b324da16ed74089d31533ca5d679, type: 3}
+  wandIcon: {fileID: 21300000, guid: b8cbb2ed85eea8249b435d221cc4c384, type: 3}
