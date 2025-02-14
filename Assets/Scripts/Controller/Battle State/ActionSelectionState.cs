@@ -26,10 +26,19 @@ public class ActionSelectionState : BaseAbilityMenuState
         {
             Ability ability = catalog.GetAbility(category, i);
             AbilityAPCost cost = ability.GetComponent<AbilityAPCost>();
-            if (cost)
-                menuOptions.Add(string.Format("{0}: {1} AP", ability.name, cost.amount));
-            else
-                menuOptions.Add(ability.name);
+            WeaponTypes curWep = turn.actor.GetComponent<PlayableUnit>().eqMainWeapon.type;
+            int lvlReq = ability.GetComponent<LevelRequirement>().requiredLevel;
+            int? curLvl = turn.actor.GetComponent<WeaponProficiency>().GetCurrentLevel(curWep);
+            if (lvlReq <= curLvl)
+            {
+                if (cost)
+                {
+                    menuOptions.Add(string.Format("{0}: {1} AP", ability.name, cost.amount));
+                }
+                else if (!ability.isPassive)
+                    menuOptions.Add(ability.name);
+            }
+            
             locks[i] = !ability.CanPerform();
         }
 

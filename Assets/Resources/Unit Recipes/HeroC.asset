@@ -15,7 +15,7 @@ MonoBehaviour:
   model: HeroC
   weapon: 
   subweapon: 
-  attack: Attack
+  attack: DamageAbilityBase
   abilityCatalog: Wand
   strategy: 
   locomotions: 0

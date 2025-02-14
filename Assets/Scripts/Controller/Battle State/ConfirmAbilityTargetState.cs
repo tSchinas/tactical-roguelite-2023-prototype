@@ -6,23 +6,65 @@ public class ConfirmAbilityTargetState : BattleState
 {
     List<Tile> tiles;
     AbilityArea aa;
+    AbilityRange range;
     int index = 0;
 
     public override void Enter()
     {
         base.Enter();
         aa = turn.ability.GetComponent<AbilityArea>();
-        tiles = aa.GetTilesInArea(board, pos);
-        board.SelectTiles(tiles);
-        FindTargets();
-        RefreshPrimaryStatPanel(turn.actor.tile.pos);
-        if (turn.targets.Count > 0)
+        range = turn.ability.GetComponent<AbilityRange>();
+        if (aa.isSingleTarget && range.returnFirstInLine)
         {
-            SetTarget(0);
+            Point p = new();
+            tiles = aa.GetTilesInArea(board, pos);
+            List<Tile> targetTile = new();
+            foreach (Tile t in tiles)
+            {
+                if (t.content != null)
+                {
+                    p = t.pos;
+                    targetTile.Add(t);
+                }
+            }
+            pos = p;
+            tiles = aa.GetTilesInArea(board, targetTile[0].pos);
+            tileSelectionIndicator.localPosition = board.tiles[targetTile[0].pos].Center;
+            board.SelectTiles(targetTile);
+            FindTargets();
+            RefreshPrimaryStatPanel(turn.actor.tile.pos);
+        
+            if (turn.targets.Count > 0)
+            {
+                SetTarget(0);
+                
+                
+            }
+            if (driver.Current == Drivers.Computer)
+            {
+                StartCoroutine(ComputerDisplayAbilitySelection());
+            }
         }
-        if (driver.Current == Drivers.Computer)
-            StartCoroutine(ComputerDisplayAbilitySelection());
+
+    
+        else 
+        { 
+            tiles = aa.GetTilesInArea(board, pos);
+            board.SelectTiles(tiles);
+            FindTargets();
+            RefreshPrimaryStatPanel(turn.actor.tile.pos);
+            if (turn.targets.Count > 0)
+            {
+                SetTarget(0);
+            }
+            if (driver.Current == Drivers.Computer)
+            {
+                StartCoroutine(ComputerDisplayAbilitySelection());
+            }
     }
+        
+    }
+    
 
     public override void Exit()
     {
@@ -30,7 +72,7 @@ public class ConfirmAbilityTargetState : BattleState
         board.DeSelectTiles(tiles);
         statPanelController.HidePrimary();
         statPanelController.HideSecondary();
-        
+        tileSelectionIndicator.localPosition = board.tiles[turn.actor.tile.pos].Center;
     }
 
     protected override void OnMove(object sender, InfoEventArgs<Point> e)
@@ -69,6 +111,8 @@ public class ConfirmAbilityTargetState : BattleState
             index = turn.targets.Count - 1;
         if (index >= turn.targets.Count)
             index = 0;
+
+        
 
         if (turn.targets.Count > 0)
         {

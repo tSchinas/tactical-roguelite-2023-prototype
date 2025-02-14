@@ -95,6 +95,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5084901792615105409}
+  - component: {fileID: 2787969522366070979}
   m_Layer: 0
   m_Name: HeroB
   m_TagString: Untagged
@@ -118,6 +119,29 @@ Transform:
   - {fileID: 5084901792270812155}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2787969522366070979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5084901792615105410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5653186e49b5eef49894208aa5518e33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponProficiencies:
+  - weaponType: 1
+    currentExperience: 0
+  - weaponType: 2
+    currentExperience: 0
+  weaponLevels:
+  - weaponType: 1
+    currentLevel: 0
+  - weaponType: 2
+    currentLevel: 0
+  ownerUnit: {fileID: 0}
 --- !u!1 &5084901793034915816
 GameObject:
   m_ObjectHideFlags: 0

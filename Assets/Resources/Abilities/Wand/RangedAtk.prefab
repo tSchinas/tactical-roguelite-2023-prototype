@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6897455865881744929}
   - component: {fileID: -1533728613479826061}
-  - component: {fileID: -7788460959022087719}
-  - component: {fileID: 662719397016541958}
+  - component: {fileID: -1896158742062790833}
+  - component: {fileID: -6655665280332998045}
+  - component: {fileID: 7011271130139149538}
   m_Layer: 0
   m_Name: RangedAtk
   m_TagString: Untagged
@@ -47,7 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91040c31a0dba304cb93315716993d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-7788460959022087719
+  isPassive: 0
+--- !u!114 &-1896158742062790833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,12 +58,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7903189738290028978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43f59e873d3778143b9390d40aa77738, type: 3}
+  m_Script: {fileID: 11500000, guid: 31f643cf930406a4cbe3fa498ab05b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontal: 4
-  vertical: 2147483647
---- !u!114 &662719397016541958
+  requiredLevel: 0
+--- !u!114 &-6655665280332998045
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,7 +71,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 7903189738290028978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fedd19d5ce801f149ad21a8ab48c3ab8, type: 3}
+  m_Script: {fileID: 11500000, guid: 1569892adb6fb174aa9b877fbf721f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontal: 5
+  vertical: 2147483647
+--- !u!114 &7011271130139149538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7903189738290028978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b5933f102f0bd47ae11818621e9f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9036311519168530866

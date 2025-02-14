@@ -6,4 +6,5 @@ using UnityEngine;
 public abstract class AbilityArea : MonoBehaviour
 {
     public abstract List<Tile> GetTilesInArea(Board board, Point pos);//indicates selected location within a range from which to determine tiles to grab
+    public virtual bool isSingleTarget { get; protected set; } = false;
 }

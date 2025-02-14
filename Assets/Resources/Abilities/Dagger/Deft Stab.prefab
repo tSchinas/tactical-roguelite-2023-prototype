@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 5692598154430992147}
   - component: {fileID: 7704047984864831560}
   - component: {fileID: 1296045500891782467}
+  - component: {fileID: -7350083235620447574}
   m_Layer: 0
   m_Name: Deft Stab
   m_TagString: Untagged
@@ -147,3 +148,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 2
+--- !u!114 &-7350083235620447574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8373130445271116355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f643cf930406a4cbe3fa498ab05b8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredLevel: 2

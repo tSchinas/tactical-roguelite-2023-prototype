@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: EnemySetCatalog
   m_EditorClassIdentifier: 
   enemySets:
-  - {fileID: 11400000, guid: f5cfb22e8a0dcde46b143a67369f7ad8, type: 2}
+  - {fileID: 11400000, guid: 86c60ffd39a13944c9ad8afe2934ae55, type: 2}

@@ -13,7 +13,7 @@ public abstract class BattleState : State
     public LevelData LevelData { get { return owner.LevelData; }  }
     public UnitSet enemySet { get { return owner.enemySet; } }
     public UnitSet heroSet { get { return owner.heroSet; } }
-    public Transform TileSelectionIndicator { get { return owner.TileSelectionIndicator; } }
+    public Transform tileSelectionIndicator { get { return owner.tileSelectionIndicator; } }
     public Point pos { get { return owner.pos; } set { owner.pos = value; } }
     public AbilityMenuPanelController abilityMenuPanelController { get { return owner.abilityMenuPanelController; } }
     public Turn turn { get { return owner.turn; } }
@@ -64,7 +64,7 @@ public abstract class BattleState : State
         if (pos == p || !board.tiles.ContainsKey(p))
             return;
         pos = p;
-        TileSelectionIndicator.localPosition = board.tiles[p].Center;
+        tileSelectionIndicator.localPosition = board.tiles[p].Center;
     }
     protected virtual Unit GetUnit (Point p)
     {

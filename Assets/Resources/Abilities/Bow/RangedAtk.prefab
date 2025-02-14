@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -1533728613479826061}
   - component: {fileID: -7788460959022087719}
   - component: {fileID: 662719397016541958}
+  - component: {fileID: 9173813766291222273}
   m_Layer: 0
   m_Name: RangedAtk
   m_TagString: Untagged
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91040c31a0dba304cb93315716993d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPassive: 0
 --- !u!114 &-7788460959022087719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,6 +75,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fedd19d5ce801f149ad21a8ab48c3ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &9173813766291222273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7903189738290028978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f643cf930406a4cbe3fa498ab05b8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredLevel: 0
 --- !u!1 &9036311519168530866
 GameObject:
   m_ObjectHideFlags: 0

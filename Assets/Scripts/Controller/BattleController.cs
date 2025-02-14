@@ -17,7 +17,7 @@ public class BattleController : StateMachine
     public EnemySetCatalog enemyCatalog;
     public UnitSet enemySet;
     public UnitSet heroSet;
-    public Transform TileSelectionIndicator;
+    public Transform tileSelectionIndicator;
     public Point pos;
     public AbilityMenuPanelController abilityMenuPanelController;
     public Turn turn = new Turn();

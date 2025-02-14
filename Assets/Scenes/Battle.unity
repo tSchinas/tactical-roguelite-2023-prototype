@@ -625,7 +625,7 @@ MonoBehaviour:
   enemyCatalog: {fileID: 11400000, guid: 20d7043ca90dbaf438dedb1835929d3c, type: 2}
   enemySet: {fileID: 11400000, guid: f5cfb22e8a0dcde46b143a67369f7ad8, type: 2}
   heroSet: {fileID: 11400000, guid: 82ec3693d395c51469d80ea44dec29f7, type: 2}
-  TileSelectionIndicator: {fileID: 1311830686}
+  tileSelectionIndicator: {fileID: 1311830686}
   pos:
     x: 0
     y: 0

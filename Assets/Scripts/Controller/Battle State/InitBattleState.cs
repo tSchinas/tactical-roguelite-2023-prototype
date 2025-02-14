@@ -81,11 +81,19 @@ public class InitBattleState : BattleState
             units.Add(unit);
             if (unit._eqMainWeapon == null)
             {
-                WeaponTypes newType = (WeaponTypes)UnityEngine.Random.Range(1, 2);
+                WeaponTypes newType;
+                float roll = UnityEngine.Random.value;
+                if (roll >= .5f)
+                {
+                    newType = WeaponTypes.Dagger;
+                }
+                else
+                    newType = WeaponTypes.Wand;
+
+                //WeaponTypes newType = (WeaponTypes)UnityEngine.Random.Range(minVal, maxVal);
                 GameObject newWeapon = WeaponFactory.Create(newType);
                 unit._eqMainWeapon = newWeapon.GetComponent<Weapon>();
                 newWeapon.transform.SetParent(unit.transform);
-                
             }
             unit.EvaluateAbilityCatalog(unit);
         }

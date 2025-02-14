@@ -15,7 +15,7 @@ MonoBehaviour:
   model: HeroA
   weapon: 
   subweapon: 
-  attack: Attack
+  attack: DamageAbilityBase
   abilityCatalog: Dagger
   strategy: 
   locomotions: 0

@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class ChargeAbilityRange : AbilityRange
 {
     public override bool DirectionOriented { get { return true; } }
+    public override bool returnFirstInLine { get { return true; } }
+
 
     public override List<Tile> GetTilesInRange(Board board)
     {
@@ -54,4 +56,5 @@ public class ChargeAbilityRange : AbilityRange
 
         return retValue;
     }
+
 }
