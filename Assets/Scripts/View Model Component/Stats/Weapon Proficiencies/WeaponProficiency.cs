@@ -34,20 +34,30 @@ public class WeaponProficiency : MonoBehaviour, IExperienceGainer
     {
         get
         {
-            string typetext = ownerUnit.eqMainWeapon.type.ToString();
+            
             if (ownerUnit == null || ownerUnit.eqMainWeapon == null)
                 return "+2 Main";
-            return $"+2 "+typetext;
+            else
+            {
+                string typetext = ownerUnit._eqMainWeapon.type.ToString();
+                return $"+2 " + typetext;
+            }
+                
         }
     }
     public string SubGainDisplay
     {
         get
         {
-            string typetext = ownerUnit.eqSubWeapon.type.ToString();
+            
             if (ownerUnit == null || ownerUnit.eqSubWeapon == null)
                 return "+1 Main";
-            return $"+1 "+typetext;
+            else
+            {
+                string typetext = ownerUnit.eqSubWeapon.type.ToString();
+                return $"+1 " + typetext;
+            }
+
         }
     }
 
@@ -75,7 +85,7 @@ public class WeaponProficiency : MonoBehaviour, IExperienceGainer
         }
     }
     
-    private static PlayableUnit ownerUnit;
+    private PlayableUnit ownerUnit;
 
     private int expCurve = 20;
     private int mainExp = 2;
