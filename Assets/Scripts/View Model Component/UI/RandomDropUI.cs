@@ -12,7 +12,7 @@ public class RandomDropUI : MonoBehaviour
     public Transform textParentTransform;
     public GameObject _backgroundContainer;
     public GameObject _itemContainer;
-    public String itemName;
+    public string itemName;
 
     public GameObject bonusTextPrefab;
 
@@ -20,6 +20,7 @@ public class RandomDropUI : MonoBehaviour
 
     public void Display(RandomRewardsHandler.RandomDropUIElements data)
     {
+        offset.y = 0;
         Image backgroundSprite = _backgroundContainer.GetComponent<Image>();
         backgroundSprite.sprite = data.backgroundImage;
         Image itemSprite = _itemContainer.GetComponent<Image>();

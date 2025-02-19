@@ -41,21 +41,21 @@ public abstract class Movement : MonoBehaviour
 
     public abstract IEnumerator Traverse(Tile tile);
 
-    protected virtual IEnumerator Turn(Directions dir)
-    {
-        TransformLocalEulerTweener t = (TransformLocalEulerTweener)transform.RotateToLocal(dir.ToEuler(), 0.25f, EasingEquations.EaseInOutQuad);
+    //protected virtual IEnumerator Turn(Directions dir)
+    //{
+    //    TransformLocalEulerTweener t = (TransformLocalEulerTweener)transform.RotateToLocal(dir.ToEuler(), 0.25f, EasingEquations.EaseInOutQuad);
 
-        //when rotating between north and west, exception to have it look like the unit is
-        //turning efficiently (as 0 and 360 are treated the same)
-        if (Mathf.Approximately(t.startTweenValue.y, 0f) && Mathf.Approximately(t.endTweenValue.y, 270f))
-            t.startTweenValue = new Vector3(t.startTweenValue.x, 360f, t.startTweenValue.z);
-        else if (Mathf.Approximately(t.startTweenValue.y, 270) && Mathf.Approximately(t.endTweenValue.y, 0))
-            t.endTweenValue = new Vector3(t.startTweenValue.x, 360f, t.startTweenValue.z);
+    //    //when rotating between north and west, exception to have it look like the unit is
+    //    //turning efficiently (as 0 and 360 are treated the same)
+    //    if (Mathf.Approximately(t.startTweenValue.y, 0f) && Mathf.Approximately(t.endTweenValue.y, 270f))
+    //        t.startTweenValue = new Vector3(t.startTweenValue.x, 360f, t.startTweenValue.z);
+    //    else if (Mathf.Approximately(t.startTweenValue.y, 270) && Mathf.Approximately(t.endTweenValue.y, 0))
+    //        t.endTweenValue = new Vector3(t.startTweenValue.x, 360f, t.startTweenValue.z);
 
-        unit.dir = dir;
+    //    unit.dir = dir;
 
-        while (t != null)
-            yield return null;
-    }
+    //    while (t != null)
+    //        yield return null;
+    //}
 
 }

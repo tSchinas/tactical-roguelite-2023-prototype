@@ -15,4 +15,6 @@ MonoBehaviour:
   categories:
   - name: Dagger & Dagger
     abilities:
-    - Deft Stab
+    - Far Stab+
+    - Deft Stab+
+    - Move +1

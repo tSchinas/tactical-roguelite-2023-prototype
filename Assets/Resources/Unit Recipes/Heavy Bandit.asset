@@ -24,7 +24,7 @@ MonoBehaviour:
   mhp: 4
   ap: 3
   map: 3
-  atk: 2
+  atk: 3
   def: 0
   mov: 2
   jmp: 1

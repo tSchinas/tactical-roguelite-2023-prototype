@@ -15,4 +15,6 @@ MonoBehaviour:
   categories:
   - name: Wand & Wand
     abilities:
-    - RangedAtk
+    - Fire Bolt+
+    - Ice Bolt+
+    - Lightning Bolt+

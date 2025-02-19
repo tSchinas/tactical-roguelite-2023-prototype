@@ -18,13 +18,13 @@ public class FlyMovement : Movement
             yield return null;
 
         //turn to face general direction
-        Directions dir;
-        Vector3 toTile = (tile.Center - transform.position);
-        if (Mathf.Abs(toTile.x) > Mathf.Abs(toTile.z))
-            dir = toTile.x > 0 ? Directions.East : Directions.West;
-        else
-            dir = toTile.z > 0 ? Directions.North : Directions.South;
-        yield return StartCoroutine(Turn(dir));
+        //Directions dir;
+        //Vector3 toTile = (tile.Center - transform.position);
+        //if (Mathf.Abs(toTile.x) > Mathf.Abs(toTile.z))
+        //    dir = toTile.x > 0 ? Directions.East : Directions.West;
+        //else
+        //    dir = toTile.z > 0 ? Directions.North : Directions.South;
+        //yield return StartCoroutine(Turn(dir));
 
         //move to correct position
         duration = dist * .5f;

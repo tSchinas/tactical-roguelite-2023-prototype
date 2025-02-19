@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class WeaponProficiency : MonoBehaviour
+public class WeaponProficiency : MonoBehaviour, IExperienceGainer
 {
     [System.Serializable]
     public struct WeaponProficiencyEntry
@@ -30,8 +30,52 @@ public class WeaponProficiency : MonoBehaviour
     private Dictionary<WeaponTypes, int> proficiencyDictionary;
     public RequiredExperience requiredExperience;
     private Dictionary<WeaponTypes, int> currentLevels;
+    public string MainGainDisplay
+    {
+        get
+        {
+            string typetext = ownerUnit.eqMainWeapon.type.ToString();
+            if (ownerUnit == null || ownerUnit.eqMainWeapon == null)
+                return "+2 Main";
+            return $"+2 "+typetext;
+        }
+    }
+    public string SubGainDisplay
+    {
+        get
+        {
+            string typetext = ownerUnit.eqSubWeapon.type.ToString();
+            if (ownerUnit == null || ownerUnit.eqSubWeapon == null)
+                return "+1 Main";
+            return $"+1 "+typetext;
+        }
+    }
 
-    [SerializeField] private PlayableUnit ownerUnit;
+    public string MainLvUpDisplay
+    {
+        get
+        {
+            if (ownerUnit == null || ownerUnit.eqMainWeapon == null)
+            {
+                return "Main Lv+";
+            }
+            return $"{ownerUnit._eqMainWeapon.type} Lv+";
+        }
+    }
+
+    public string SubLvUpDisplay
+    {
+        get
+        {
+            if (ownerUnit == null || ownerUnit.eqSubWeapon == null)
+            {
+                return "Sub Lv+";
+            }
+            return $"{ownerUnit._eqSubWeapon.type} Lv+";
+        }
+    }
+    
+    private static PlayableUnit ownerUnit;
 
     private int expCurve = 20;
     private int mainExp = 2;
@@ -40,7 +84,9 @@ public class WeaponProficiency : MonoBehaviour
     private void Start()
     {
         ownerUnit = GetComponent<PlayableUnit>();
+        
     }
+      
 
     private void Awake()
     {
@@ -58,17 +104,20 @@ public class WeaponProficiency : MonoBehaviour
         }
 
         requiredExperience.lvone = expCurve * 1;
-        requiredExperience.lvtwo = requiredExperience.lvone + expCurve * 2;
-        requiredExperience.lvthree = requiredExperience.lvone + expCurve * 3;
+        requiredExperience.lvtwo = requiredExperience.lvone + expCurve;
+        requiredExperience.lvthree = requiredExperience.lvone + expCurve;
     }
 
-    private void OnEnable()
+    public void GainExperience(Weapon mainWeapon, Weapon subWeapon)
     {
-        this.AddObserver(OnAbilityPerformed, Ability.DidPerformNotification);
-    }
-    private void OnDisable()
-    {
-        this.RemoveObserver(OnAbilityPerformed, Ability.DidPerformNotification);
+        if (mainWeapon != null)
+        {
+            IncreaseExperience(mainWeapon.type, mainExp);
+        }
+        if (subWeapon != null)
+        {
+            IncreaseExperience(subWeapon.type, subExp);
+        }
     }
 
     public int? GetCurrentExperience(WeaponTypes type)
@@ -92,32 +141,34 @@ public class WeaponProficiency : MonoBehaviour
         return null;
     }
 
-    public void OnAbilityPerformed(object sender, object args)
-    {
-        Ability ability = sender as Ability;
-        if (ability == null)
-            return;
+    
 
-        PlayableUnit unit = ability.GetComponentInParent<PlayableUnit>();
-        if (unit != null && unit == ownerUnit)
-        {
-            UpdateExperience(unit.eqMainWeapon, unit.eqSubWeapon);
-        }
+    //public void OnAbilityPerformed(object sender, object args)
+    //{
+    //    Ability ability = sender as Ability;
+    //    if (ability == null)
+    //        return;
+
+    //    //PlayableUnit unit = ability.GetComponentInParent<PlayableUnit>();
+    //    if (ability.GetComponentInParent<PlayableUnit>() == ownerUnit)
+    //    {
+    //        UpdateExperience(ownerUnit.eqMainWeapon, ownerUnit.eqSubWeapon);
+    //    }
         
-    }
+    //}
 
-    private void UpdateExperience(Weapon mainWeapon, Weapon subWeapon)
-    {
-        if (mainWeapon != null)
-        {
-            IncreaseExperience(mainWeapon.type, mainExp);
-        }
+    //private void UpdateExperience(Weapon mainWeapon, Weapon subWeapon)
+    //{
+    //    if (mainWeapon != null)
+    //    {
+    //        IncreaseExperience(mainWeapon.type, mainExp);
+    //    }
 
-        if (subWeapon != null)
-        {
-            IncreaseExperience(subWeapon.type, subExp);
-        }
-    }
+    //    if (subWeapon != null)
+    //    {
+    //        IncreaseExperience(subWeapon.type, subExp);
+    //    }
+    //}
 
     private void IncreaseExperience(WeaponTypes type, int amount)
     {
@@ -131,7 +182,7 @@ public class WeaponProficiency : MonoBehaviour
                 weaponProficiencies[i] = new WeaponProficiencyEntry
                 {
                     weaponType =  type,
-                    currentExperience = proficiencyDictionary[ type]
+                    currentExperience = proficiencyDictionary[type]
                 };
                 break;
             }

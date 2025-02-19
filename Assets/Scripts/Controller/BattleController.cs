@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class BattleController : StateMachine
 {
@@ -18,6 +19,8 @@ public class BattleController : StateMachine
     public UnitSet enemySet;
     public UnitSet heroSet;
     public Transform tileSelectionIndicator;
+    public GameObject damageText;
+    public GameObject expText;
     public Point pos;
     public AbilityMenuPanelController abilityMenuPanelController;
     public Turn turn = new Turn();
@@ -26,7 +29,7 @@ public class BattleController : StateMachine
     public List<Unit> enemyUnits = new List<Unit>();
     public Transform offWorldTransform;
     public AutoStatusController autoStatusController;
-
+    public Inventory inventory;
 
     public StatPanelController statPanelController;
     //heroPrefab,currentUnit,currentTile are placeholders

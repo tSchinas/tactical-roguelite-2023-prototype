@@ -11,6 +11,7 @@ public class Stats : MonoBehaviour
         set { SetValue(s, value, true); }
     }
     public int[] _data = new int[(int)StatTypes.Count];
+    public int lastDamageTaken;
     public void SetValue(StatTypes type, int value, bool allowExceptions)
     {
         int oldValue = this[type];

@@ -5,6 +5,7 @@ using UnityEngine;
 //used when an ability always has a predetermined amount for range i.e Spell X has range Y.
 public class ConstantAbilityRange : AbilityRange
 {
+    public override bool DirectionOriented => false;
     //similar to Movement component using board's search ability to retrieve list of tiles within range of user
     public override List<Tile> GetTilesInRange(Board board)
     {

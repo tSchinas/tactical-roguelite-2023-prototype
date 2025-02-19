@@ -15,8 +15,8 @@ MonoBehaviour:
   model: HeroB
   weapon: 
   subweapon: 
-  attack: RangedAtk
-  abilityCatalog: Bow
+  attack: HeroBAttack
+  abilityCatalog: Dagger
   strategy: 
   locomotions: 0
   alliance: 2

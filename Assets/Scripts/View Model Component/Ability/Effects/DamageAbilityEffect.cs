@@ -108,7 +108,10 @@ public class DamageAbilityEffect : BaseAbilityEffect
             // Apply the damage to the target
             Stats s = defender.GetComponent<Stats>();
         for (int i = 0; i < hits; i++)
+        {
             s[StatTypes.HP] -= value;
+            s.lastDamageTaken = value;
+        }
         if (s[StatTypes.HP] < 0)
             s[StatTypes.HP] = 0;
 

@@ -15,4 +15,6 @@ MonoBehaviour:
   categories:
   - name: Dagger & Wand
     abilities:
+    - Lightning Bolt
     - Deft Stab
+    - Move +1

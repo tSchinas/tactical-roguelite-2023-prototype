@@ -19,7 +19,7 @@ public abstract class BattleState : State
     public Turn turn { get { return owner.turn; } }
     public List<Unit> units { get { return owner.units; } }
     public StatPanelController statPanelController { get { return owner.statPanelController; } }
-    //public TurnManager turnManager { get { return owner.turnManager; } }
+    public Inventory inventory { get { return owner.inventory; } }
 
     protected Driver driver;
     public override void Enter()

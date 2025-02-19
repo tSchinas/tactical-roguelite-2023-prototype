@@ -33,7 +33,6 @@ RectTransform:
   m_Children:
   - {fileID: 1987011421749988666}
   m_Father: {fileID: 1987011422193830005}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -57,7 +56,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -137,7 +138,6 @@ RectTransform:
   m_Children:
   - {fileID: 1987011422417434722}
   m_Father: {fileID: 1987011421533723286}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -279,6 +279,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987011422193830006}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -286,7 +287,6 @@ Transform:
   m_Children:
   - {fileID: 1987011421533723286}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1987011422193830004
 MonoBehaviour:
@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc738e0b972fe34bbbf74e9457e55cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entryPrefab: {fileID: 4897451158722728555, guid: 9f42d97d066796345be732ccaf5660f3, type: 3}
+  entryPrefab: {fileID: 4017200701750596765, guid: a119fe1ea4634c341b7cc4564d90e6a4, type: 3}
   titleLabel: {fileID: 1987011422669519460}
   panel: {fileID: 1987011421749988663}
   canvas: {fileID: 1987011421533723287}
@@ -335,7 +335,6 @@ RectTransform:
   m_Children:
   - {fileID: 1987011422669519461}
   m_Father: {fileID: 1987011421749988666}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -399,7 +398,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1987011422417434722}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -435,8 +433,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
+    m_Font: {fileID: 12800000, guid: fb648162e76aaaf438182cc60ca50ae2, type: 3}
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2

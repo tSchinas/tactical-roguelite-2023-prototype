@@ -36,8 +36,7 @@ public class WalkMovement : Movement
             Tile to = targets[i];
 
             Directions dir = from.GetDirection(to);
-            if (unit.dir != dir)
-                yield return StartCoroutine(Turn(dir));
+            
             if (from.height == to.height)
                 yield return StartCoroutine(Walk(to));
             else

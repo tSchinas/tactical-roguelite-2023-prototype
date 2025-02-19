@@ -21,6 +21,7 @@ public class RandomRewardsHandler : MonoBehaviour
         public Sprite backgroundImage;
         public String itemName;
         public List<String> bonusTexts;
+        public ClaimRewardButton claimButton;
     }
 
     public GameObject uiPrefab;
@@ -34,6 +35,7 @@ public class RandomRewardsHandler : MonoBehaviour
     {
         CalculateAmount();
         GenerateLoot(amount);
+        
     }
 
     private void CalculateAmount()
@@ -50,15 +52,22 @@ public class RandomRewardsHandler : MonoBehaviour
         {
             randomDropUIElements.bonusTexts.Clear();
             float roll = UnityEngine.Random.value;
-            WeaponTypes randomType = (WeaponTypes)UnityEngine.Random.Range(1, 2);
-            if(roll >= 0f)
+            WeaponTypes randomType;
+            if (roll >= .5f)
+            {
+                randomType = WeaponTypes.Dagger;
+            }
+            else
+                randomType = WeaponTypes.Wand;
+
+            if (roll >= 0f)
             {
                 GameObject newWeapon = WeaponFactory.Create(randomType);
                 GameObject newUI = GameObject.Instantiate(uiPrefab);
-                
+
                 randomDropUI = newUI.GetComponent<RandomDropUI>();
                 //newUI.transform.SetParent(randomDropUI.parentTransform.transform);
-
+                randomDropUIElements.claimButton = newUI.GetComponentInChildren<ClaimRewardButton>();
                 Weapon weapon = newWeapon.GetComponent<Weapon>();
                 switch (weapon.type)
                 {
@@ -74,12 +83,14 @@ public class RandomRewardsHandler : MonoBehaviour
                         {
                             randomDropUIElements.itemImage = dropData.daggerIcon;
                             randomDropUIElements.itemName = "Dagger";
+                            randomDropUIElements.claimButton.InitializeActor(newWeapon);
                             break;
                         }
                     case WeaponTypes.Wand:
                         {
                             randomDropUIElements.itemImage = dropData.wandIcon;
                             randomDropUIElements.itemName = "Wand";
+                            randomDropUIElements.claimButton.InitializeActor(newWeapon);
                             break;
                         }
                 }
@@ -109,7 +120,7 @@ public class RandomRewardsHandler : MonoBehaviour
 
                         }
                 }
-                
+
                 if (weapon.atkBonus > 0)
                 {
                     randomDropUIElements.bonusTexts.Add($"ATK +{weapon.atkBonus}");
@@ -130,7 +141,7 @@ public class RandomRewardsHandler : MonoBehaviour
                 {
                     randomDropUIElements.bonusTexts.Add($"MOV: +{weapon.movBonus}");
                 }
-                                
+
                 randomDropUI.Display(randomDropUIElements);
             }
             //TODO: Other Factories

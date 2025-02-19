@@ -28,9 +28,14 @@ public class ConfirmAbilityTargetState : BattleState
                 }
             }
             pos = p;
-            tiles = aa.GetTilesInArea(board, targetTile[0].pos);
-            tileSelectionIndicator.localPosition = board.tiles[targetTile[0].pos].Center;
-            board.SelectTiles(targetTile);
+            if (targetTile.Count > 0)
+            {
+                tiles = aa.GetTilesInArea(board, targetTile[0].pos);
+                tileSelectionIndicator.localPosition = board.tiles[targetTile[0].pos].Center;
+                board.SelectTiles(targetTile);
+            }
+
+            
             FindTargets();
             RefreshPrimaryStatPanel(turn.actor.tile.pos);
         

@@ -24,7 +24,7 @@ public class Unit : MonoBehaviour
     public void Match()
     {
         transform.localPosition = tile.Center;
-        transform.localEulerAngles = dir.ToEuler();
+        //transform.localEulerAngles = dir.ToEuler();
     }
 
     

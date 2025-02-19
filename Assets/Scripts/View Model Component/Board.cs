@@ -109,4 +109,11 @@ public class Board : MonoBehaviour
         for (int i = tiles.Count - 1; i >= 0; --i)
             tiles[i].GetComponent<Renderer>().material.SetColor("_Color", defaultTileColor);
     }
+
+    public void UnLoad()
+    {
+        for (var i = transform.childCount - 1; i >= 0; --i)
+            DestroyImmediate(transform.GetChild(i).gameObject);
+        tiles.Clear();
+    }
 }

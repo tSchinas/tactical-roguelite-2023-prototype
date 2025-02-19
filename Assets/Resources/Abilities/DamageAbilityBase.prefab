@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca951653e3c13d3459d2c3cf0d7c2c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityPower: 5
+  abilityPower: 0
   hits: 1
 --- !u!114 &4689111739161492221
 MonoBehaviour:

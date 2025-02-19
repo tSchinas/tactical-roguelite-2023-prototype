@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class BaseVictoryCondition : MonoBehaviour
 {
     public Alliances Victor{ get { return victor; } protected set { victor = value; } }
-    Alliances victor = Alliances.None;
+    [SerializeField] Alliances victor = Alliances.None;
     protected BattleController bc;
     protected virtual void Awake()
     {
@@ -43,7 +43,17 @@ public abstract class BaseVictoryCondition : MonoBehaviour
     }
     protected virtual void CheckForGameOver()
     {
+        
         if (PartyDefeated(Alliances.Hero))
             Victor = Alliances.Enemy;
+        
     }
+    public virtual void ResetVictor()
+    {
+        this.RemoveObserver(OnHPDidChangeNotification, Stats.DidChangeNotification(StatTypes.HP));
+
+        Victor = Alliances.None;
+        
+        this.AddObserver(OnHPDidChangeNotification, Stats.DidChangeNotification(StatTypes.HP));
+    }    
 }
